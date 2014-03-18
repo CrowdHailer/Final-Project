@@ -29,6 +29,11 @@ class User < ActiveRecord::Base
 
   def confirm_maker
     self.verified_maker = true
+    self.save
+  end
+
+  def self.verified_makers
+    User.all.select{ |user| user.verified_maker? }
   end
 
 end

@@ -45,4 +45,14 @@ describe 'User' do
     expect(@user).to be_verified_maker
   end
 
+  it "should know all the verified makers" do
+    user1 = User.create(name: "First User")
+    user2 = User.create(name: "Second User")
+    user3 = User.create(name: "Third User")
+    expect(User.verified_makers).to eq([])
+    user1.confirm_maker
+    user2.confirm_maker
+    expect(User.verified_makers).to eq([user1, user2])
+  end
+
 end
