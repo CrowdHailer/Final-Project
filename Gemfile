@@ -43,11 +43,13 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
-  gem 'awesome_print'
   gem 'poltergeist'
 end
 
 group :development do
   gem 'annotate'
+end
 
+group :development, :test do
+  gem 'awesome_print'
 end

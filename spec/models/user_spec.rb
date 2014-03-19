@@ -32,6 +32,9 @@ describe 'User' do
   it { should respond_to (:name) }
   it { should respond_to (:email) }
   it { should respond_to (:verified_maker?) }
+  it { should respond_to (:profile_image) }
+  it { should respond_to (:cohort) }
+  it { should respond_to (:seeking_work) }
 
 
   it 'should have an email' do
@@ -67,8 +70,10 @@ describe 'User' do
 
   it 'auth testing' do
     visit "/auth/github"
-    expect(User.find_by_github_username('githubME')).not_to be_nil
+    user = User.find_by_github_username('githubME')
+    expect(user.profile_image).to eq('a.test')
   end
+
 
 end
 

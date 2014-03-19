@@ -46,10 +46,13 @@ RSpec.configure do |config|
   OmniAuth.config.add_mock(:github, {
       :uid  => '123456789',
       :info => {
-                :login => 'githubME',
+                :nickname => 'githubME',
                 :name  => 'Mr Test',
                 :email => 'test@example.com'
               },
+      :raw_info => {
+        :avatar_url => 'a.test'
+      },
       :credentials => {
                       :access_token => 'a'
                       }
