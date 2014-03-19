@@ -1,7 +1,7 @@
 Feature: Home page content
 
   Background: 
-    Given I am on the home page
+    Given I visit the "home" page
 
   Scenario: Public view
 	  Then I should see "Full Stack"
