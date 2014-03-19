@@ -13,6 +13,9 @@
 #  email            :string(255)
 #  verified_maker   :boolean          default(FALSE)
 #  github_username  :string(255)
+#  profile_image    :string(255)
+#  cohort           :string(255)
+#  seeking_work     :datetime
 #
 
 class User < ActiveRecord::Base
