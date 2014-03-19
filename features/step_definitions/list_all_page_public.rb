@@ -1,3 +1,3 @@
 When(/^I click "(.*?)"$/) do |button|
-  click_button button
+  click_link button
 end
