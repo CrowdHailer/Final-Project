@@ -18,31 +18,30 @@ require 'spec_helper'
 
 describe 'User' do
 
-  before do
-    @user = User.new(name: "John Doe", email: "test@test.com", provider: "github")
-  end
+  let (:new_user) {
+    User.new(name: "John Doe", email: "test@test.com", provider: "github")
+  }
 
+  subject { new_user }
 
-  subject { @user }
-  
   it { should respond_to (:name) }
   it { should respond_to (:email) }
   it { should respond_to (:provider) }
   it { should respond_to (:verified_maker?) }
 
 
-  it 'should have an email' do 
-    expect(@user.email).to eq("test@test.com")
+  it 'should have an email' do
+    expect(new_user.email).to eq("test@test.com")
   end
 
   it 'should not be a verified maker when created' do
-    expect(@user).not_to be_verified_maker
+    expect(new_user).not_to be_verified_maker
   end
 
   it "should be able to become a verified maker" do
-    expect(@user).not_to be_verified_maker
-    @user.confirm_maker
-    expect(@user).to be_verified_maker
+    expect(new_user).not_to be_verified_maker
+    new_user.confirm_maker
+    expect(new_user).to be_verified_maker
   end
 
   it "should know all the verified makers" do
