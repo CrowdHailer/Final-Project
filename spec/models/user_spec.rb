@@ -48,9 +48,9 @@ describe 'User' do
   end
 
   it "should know all the verified makers" do
-    user1 = User.create(name: "First User",  github_username: 'Dave',   uid: 1)
-    user2 = User.create(name: "Second User", github_username: 'Gaston', uid: 2)
-    user3 = User.create(name: "Third User",  github_username: 'XXX',    uid: 3)
+    user1 = User.create(name: "First User",  github_username: 'Dave',   uid: 1, provider: "github")
+    user2 = User.create(name: "Second User", github_username: 'Gaston', uid: 2, provider: "github")
+    user3 = User.create(name: "Third User",  github_username: 'XXX',    uid: 3, provider: "github")
     expect(User.verified_makers).to eq([])
     user1.confirm_maker
     user2.confirm_maker
@@ -65,6 +65,11 @@ describe 'User' do
   it 'should require a uid' do
     expect(empty_user).to be_invalid
     expect(empty_user.errors[:uid]).not_to be_empty
+  end
+
+  it 'should require a provider' do
+    expect(empty_user).to be_invalid
+    expect(empty_user.errors[:provider]).not_to be_empty
   end
 
 end
