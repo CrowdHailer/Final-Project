@@ -6,6 +6,9 @@ OmniAuth.config.add_mock(:github, {
     :email => 'test@example.com',
     :login => "Billybob"
   },
+  :raw_info => {
+    :avatar_url => 'a.test'
+    },
   :credentials => {
     :access_token => 'a'
     }
