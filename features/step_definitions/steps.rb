@@ -1,4 +1,6 @@
+
 Given(/^I visit the "([^\"]+)" page$/) do |path_name|
+
   case path_name
   when 'home'
     visit root_path
