@@ -5,6 +5,14 @@
 # files.
 
 require 'cucumber/rails'
+require 'webmock'
+include WebMock
+Before do
+  stub_request(:any, 'https://api.github.com/users/CrowdHailer').to_return(File.new('trial.txt'))
+  stub_request(:any, 'https://api.github.com/users/CrowdHailer/repos').to_return(File.new('trial2.txt'))
+  stub_request(:any, 'https://api.github.com/repos/CrowdHailer/CV/contents/README.md').to_return(File.new('trial3.txt'))
+end
+# WebMock.disable_net_connect!(allow_localhost: true)
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
