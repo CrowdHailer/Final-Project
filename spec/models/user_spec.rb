@@ -20,8 +20,9 @@ require 'spec_helper'
 describe 'User' do
 
   let (:new_user) {
-    User.new(name: "John Doe", email: "test@test.com", provider: "github")
+    User.new(name: "John Doe", email: "test@test.com", provider: "github", github_username: 'Dave')
   }
+  let (:empty_user) { User.new }
 
   subject { new_user }
 
@@ -47,13 +48,18 @@ describe 'User' do
   end
 
   it "should know all the verified makers" do
-    user1 = User.create(name: "First User")
-    user2 = User.create(name: "Second User")
-    user3 = User.create(name: "Third User")
+    user1 = User.create(name: "First User", github_username: 'Dave')
+    user2 = User.create(name: "Second User", github_username: 'Gaston')
+    user3 = User.create(name: "Third User", github_username: 'XXX')
     expect(User.verified_makers).to eq([])
     user1.confirm_maker
     user2.confirm_maker
     expect(User.verified_makers).to eq([user1, user2])
+  end
+
+  it 'should require a Github username' do
+    expect(empty_user).to be_invalid
+    expect(empty_user.errors[:github_username]).not_to be_empty
   end
 
 end

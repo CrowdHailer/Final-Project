@@ -16,6 +16,7 @@
 #
 
 class User < ActiveRecord::Base
+  validates :github_username, presence: true
 
   def self.create_with_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
