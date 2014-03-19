@@ -1,9 +1,14 @@
 FinalProject::Application.routes.draw do
+
+  root 'home#index'
+
   get '/auth/:provider/callback'  => 'sessions#create'
   post '/signin'                  => 'sessions#new',        :as => :signin
   delete '/signout'               => 'sessions#destroy',    :as => :signout
   get '/auth/failure'             => 'sessions#failure'
-  root 'home#index'
+
+  get '/users'                    => 'users#show_all'
+  get '/:username'                => 'users#show_details'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
