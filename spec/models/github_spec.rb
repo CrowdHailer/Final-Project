@@ -5,9 +5,9 @@ describe Github do
   testname = 'CrowdHailer'
   let(:user) { Github.new testname}
   before do
-    stub_request(:any, 'https://api.github.com/users/CrowdHailer').to_return(File.new('trial.txt'))
-    stub_request(:any, 'https://api.github.com/users/CrowdHailer/repos').to_return(File.new('trial2.txt'))
-    stub_request(:any, 'https://api.github.com/repos/CrowdHailer/CV/contents/README.md').to_return(File.new('trial3.txt'))
+    stub_request(:any, 'https://api.github.com/users/CrowdHailer').to_return(File.new('tmp/stubs/github_user_profile.txt'))
+    stub_request(:any, 'https://api.github.com/users/CrowdHailer/repos').to_return(File.new('tmp/stubs/github_user_repos.txt'))
+    stub_request(:any, 'https://api.github.com/repos/CrowdHailer/CV/contents/README.md').to_return(File.new('tmp/stubs/github_repo_readme.txt'))
   end
 
   it 'should be initialized with a username' do   
