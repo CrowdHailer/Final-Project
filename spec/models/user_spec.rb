@@ -57,20 +57,27 @@ describe 'User' do
     expect(User.verified_makers).to eq([user1, user2])
   end
 
-  it 'should require a Github username' do
-    expect(empty_user).to be_invalid
-    expect(empty_user.errors[:github_username]).not_to be_empty
+  [:github_username, :uid, :provider].each do |attribute|
+    it "should require a #{attribute}" do
+      expect(empty_user).to be_invalid
+      expect(empty_user.errors[attribute]).not_to be_empty
+    end
   end
 
-  it 'should require a uid' do
-    expect(empty_user).to be_invalid
-    expect(empty_user.errors[:uid]).not_to be_empty
-  end
+  # it 'should require a Github username' do
+  #   expect(empty_user).to be_invalid
+  #   expect(empty_user.errors[:github_username]).not_to be_empty
+  # end
 
-  it 'should require a provider' do
-    expect(empty_user).to be_invalid
-    expect(empty_user.errors[:provider]).not_to be_empty
-  end
+  # it 'should require a uid' do
+  #   expect(empty_user).to be_invalid
+  #   expect(empty_user.errors[:uid]).not_to be_empty
+  # end
+
+  # it 'should require a provider' do
+  #   expect(empty_user).to be_invalid
+  #   expect(empty_user.errors[:provider]).not_to be_empty
+  # end
 
 end
 
