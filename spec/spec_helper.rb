@@ -50,8 +50,10 @@ RSpec.configure do |config|
                 :name  => 'Mr Test',
                 :email => 'test@example.com'
               },
+      :extra => {
       :raw_info => {
         :avatar_url => 'a.test'
+        }
       },
       :credentials => {
                       :access_token => 'a'
