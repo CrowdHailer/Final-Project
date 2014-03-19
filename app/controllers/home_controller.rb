@@ -5,5 +5,4 @@ class HomeController < ApplicationController
     # @showcase_user = User.random
   end
 
-
 end

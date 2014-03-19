@@ -8,7 +8,7 @@ FinalProject::Application.routes.draw do
   get '/auth/failure'             => 'sessions#failure'
 
   get '/users'                    => 'users#show_all'
-  get '/:username'                => 'users#show_details'
+  get '/user/:username'           => 'users#show_details'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
