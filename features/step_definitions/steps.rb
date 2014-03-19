@@ -1,5 +1,10 @@
-Given(/^I am on the home page$/) do
-  visit root_path
+Given(/^I visit the "([^\"]+)" page$/) do |path_name|
+  case path_name
+  when 'home'
+    visit root_path
+  else
+    puts 'Path not found'
+  end
 end
 
 Then(/^I should see "(.*?)"$/) do |text_snippet|

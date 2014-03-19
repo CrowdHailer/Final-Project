@@ -1,7 +1,7 @@
 Feature: Home page content when signed in
 
   Background: 
-    Given I am on the home page 
+    Given I visit the "home" page 
     And I sign in
 
   Scenario: Public view
