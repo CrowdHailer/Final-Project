@@ -4,8 +4,5 @@ class HomeController < ApplicationController
     @user = current_user
   end
 
-  def list_all
-
-  end
 
 end
