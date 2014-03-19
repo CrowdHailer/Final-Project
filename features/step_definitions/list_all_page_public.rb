@@ -1,3 +1,3 @@
-When(/^I click "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^I click "(.*?)"$/) do |button|
+  click_button button
 end
