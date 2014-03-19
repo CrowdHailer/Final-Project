@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show_details
-  	@user = User.first
+  	@showcase_user = User.first
   end
 
 end
