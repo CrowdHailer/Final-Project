@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.github_username = auth.info.nickname
-      user.profile_image = auth.raw_info.avatar_url
+      user.profile_image = auth.extra.raw_info.avatar_url
       user.name = auth.info.name
       user.oauth_token = auth.credentials.token
       # user.oauth_expires_at = Time.at(auth.credentials.expires_at)
@@ -46,4 +46,7 @@ class User < ActiveRecord::Base
     User.all.select{ |user| user.verified_maker? }
   end
 
+  def github
+    Github.new(github_username)
+  end
 end

@@ -17,7 +17,7 @@ class Github
 
   def cv_uri
     cv_repo = repos.find { |repo| repo[:name] == 'CV' }
-    cv_repo[:contents_url].gsub('{+path}', 'README.md')
+    cv_repo[:contents_url].gsub('{+path}', 'README.md') if cv_repo
   end
 
   def repos 
@@ -29,6 +29,7 @@ class Github
   end
 
   def cv_plain
+    return "" unless cv_uri
     encoded = fetch_json(cv_uri)[:content]
     Base64.decode64(encoded)
   end
@@ -39,6 +40,7 @@ class Github
   end
 
   def fetch_json uri
+    puts uri
     raw_data = open(uri).read
     JSON.parse(raw_data, :symbolize_names => true)
   end

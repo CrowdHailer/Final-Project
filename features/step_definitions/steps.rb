@@ -16,3 +16,7 @@ end
 Given(/^I sign in$/) do
  visit "/auth/github"
 end
+
+When(/^I sign out$/) do
+  click_link "Sign out"
+end
