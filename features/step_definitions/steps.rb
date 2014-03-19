@@ -1,5 +1,5 @@
 Given(/^I am on the home page$/) do
-  visit "/"
+  visit root_path
 end
 
 Then(/^I should see "(.*?)"$/) do |text_snippet|
