@@ -12,6 +12,7 @@
 #  updated_at       :datetime
 #  email            :string(255)
 #  verified_maker   :boolean          default(FALSE)
+#  github_username  :string(255)
 #
 
 class User < ActiveRecord::Base

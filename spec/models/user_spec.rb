@@ -12,6 +12,7 @@
 #  updated_at       :datetime
 #  email            :string(255)
 #  verified_maker   :boolean          default(FALSE)
+#  github_username  :string(255)
 #
 
 require 'spec_helper'
@@ -28,6 +29,7 @@ describe 'User' do
   it { should respond_to (:email) }
   it { should respond_to (:provider) }
   it { should respond_to (:verified_maker?) }
+  it { should respond_to (:github_username) }
 
 
   it 'should have an email' do
