@@ -4,29 +4,35 @@
 
 body {
 	background-color: #FBFBFB;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 .shadow {
-	-webkit-box-shadow: 1px 1px 11px 0px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    1px 1px 11px 0px rgba(50, 50, 50, 0.75);
-	box-shadow:         1px 1px 11px 0px rgba(50, 50, 50, 0.75);
-	margin-top: 15px;
-	margin-bottom: 15px;
+-webkit-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.75);
+ -moz-box-shadow:    2px 2px 4px 0px rgba(50, 50, 50, 0.75);
+ box-shadow:         2px 2px 4px 0px rgba(50, 50, 50, 0.75);
+ margin-top: 15px;
+ margin-bottom: 15px;
 }
-
-
 
 h1 {
 	font-size: 2em;
 	text-align:left;
 	margin-top:.4em;
+
 }
 
 .button{
 	font-size: 85%;
 	margin:.8em;
   padding: .9em;
-  border-radius: 0 20px 20px 0;
-  box-shadow: 0 0 10px #3680BD;
+  box-shadow: 0 0 7px #bdc3c7;
+  line-height: .5em;
+  background-color: none;
 }
 
+#column_border{
+	border: solid 1px #bdc3c7;
+	width: 23%;
+
+}
