@@ -6,11 +6,7 @@ describe Github do
   let(:user) { Github.new testname}
   before do
     stub_request(:any, 'https://api.github.com/users/CrowdHailer').to_return(File.new('trial.txt'))
-  end
-  before do
     stub_request(:any, 'https://api.github.com/users/CrowdHailer/repos').to_return(File.new('trial2.txt'))
-  end
-  before do
     stub_request(:any, 'https://api.github.com/repos/CrowdHailer/CV/contents/README.md').to_return(File.new('trial3.txt'))
   end
 
