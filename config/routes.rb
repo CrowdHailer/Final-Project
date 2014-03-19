@@ -7,7 +7,7 @@ FinalProject::Application.routes.draw do
   delete '/signout'               => 'sessions#destroy',    :as => :signout
   get '/auth/failure'             => 'sessions#failure'
 
-  get '/users'                    => 'users#show_all'
+  get '/users'                    => 'users#show_all'       
   get '/user/:username'           => 'users#show_details'
 
   # The priority is based upon order of creation: first created -> highest priority.

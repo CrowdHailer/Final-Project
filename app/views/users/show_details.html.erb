@@ -46,8 +46,8 @@
 
         <hr />
  
-        <p><% puts @showcase_user %></p>
-        <p><%= @showcase_user.github.cv_html %></p>
+        
+        <p><%= @showcase_user.github.cv_html.html_safe %></p>
  
         <p>and its details</p>
  
