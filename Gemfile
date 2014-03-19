@@ -46,3 +46,8 @@ group :test do
   gem 'awesome_print'
   gem 'poltergeist'
 end
+
+group :development do
+  gem 'annotate'
+
+end
