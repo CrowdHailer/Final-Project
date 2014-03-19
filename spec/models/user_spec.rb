@@ -28,9 +28,7 @@ describe 'User' do
 
   it { should respond_to (:name) }
   it { should respond_to (:email) }
-  it { should respond_to (:provider) }
   it { should respond_to (:verified_maker?) }
-  it { should respond_to (:github_username) }
 
 
   it 'should have an email' do
@@ -64,20 +62,10 @@ describe 'User' do
     end
   end
 
-  # it 'should require a Github username' do
-  #   expect(empty_user).to be_invalid
-  #   expect(empty_user.errors[:github_username]).not_to be_empty
-  # end
-
-  # it 'should require a uid' do
-  #   expect(empty_user).to be_invalid
-  #   expect(empty_user.errors[:uid]).not_to be_empty
-  # end
-
-  # it 'should require a provider' do
-  #   expect(empty_user).to be_invalid
-  #   expect(empty_user.errors[:provider]).not_to be_empty
-  # end
+  it 'auth testing' do
+    visit "/auth/github"
+    expect(User.find_by_github_username('githubME')).not_to be_nil
+  end
 
 end
 
