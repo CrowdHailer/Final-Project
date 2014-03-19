@@ -1,5 +1,3 @@
-Profile
-
     <!-- Nav Bar -->
  
   <!-- <div class="row">
@@ -29,7 +27,7 @@ Profile
  
       <article>
  
-        <h3><a href="#"></a> <%= @showcase_user.name %> </h3> 
+        <h3>Profile<a href="#"></a> <%= @showcase_user.name %> </h3> 
          
         <div class="row">
           <div class="large-6 columns">
@@ -48,7 +46,8 @@ Profile
 
         <hr />
  
-        <p>CV</p>
+        <p><% puts @showcase_user %></p>
+        <p><%= @showcase_user.github.cv_html %></p>
  
         <p>and its details</p>
  
