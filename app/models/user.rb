@@ -42,4 +42,7 @@ class User < ActiveRecord::Base
     User.all.select{ |user| user.verified_maker? }
   end
 
+  def github
+    Github.new(github_username)
+  end
 end

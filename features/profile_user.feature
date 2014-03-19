@@ -2,6 +2,7 @@ Feature: Show one person's details
 
   Background:
     Given there is a showcased user
+    
 	
   Scenario: Show a user
 
