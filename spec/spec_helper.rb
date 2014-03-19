@@ -39,4 +39,16 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+  
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+                                                              :provider => 'github',
+                                                              :uid      => '1337',
+                                                              :info     => {
+                                                                          'name'  => 'JonnieHallman',
+                                                                          'email' => 'jon@test.com'
+                                                                           }
+                                                             })
+
 end
+

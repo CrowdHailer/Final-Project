@@ -1,2 +1,3 @@
 --color
--fn
+--format doc
+--order default
