@@ -4,7 +4,9 @@
       <div class="nav-bar right">
         <ul class="button-group">
           <% if @user %>
-            <li><a href="#" class="button github_button">Sign out</a> </li>
+            <li>
+              <%= link_to 'Sign out', signout_path, method: :delete, :class => "button github_button" %>
+            </li>
           <% else %>
             <li><a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= @client_id %>" class="button">Sign in with Github</a></li>
           <% end %>
