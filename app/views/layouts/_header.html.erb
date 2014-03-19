@@ -1,31 +1,20 @@
   <!-- Nav Bar -->
- <div class="row">
-    <div class="large-12 columns">
+ <div class="row shadow">
+    <div class="large-12 columns header">
       <div class="nav-bar right">
         <ul class="button-group">
           <% if @user %>
-            <li><a href="#" class="button">Sign out</a> </li>
+            <li>
+              <%= link_to 'Sign out', signout_path, method: :delete, :class => "button github_button" %>
+            </li>
           <% else %>
             <li><a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= @client_id %>" class="button">Sign in with Github</a></li>
           <% end %>
         </ul>
       </div>
       <h1><%= link_to 'Full Stack People', root_path %></h1>
-      <hr />
     </div>
   </div>
 
   <!-- Main Page Content and Sidebar -->
 
-  <div class="row">
-
-    <!-- Main Blog Content -->
-
-    <div class="large-12 columns" role="content">
-      <article>
-        <p style="text-align: center;">The showcase for graduates of <a href="http://www.makersacademy.com/"> Makers Academy </a>
-        </p>
-        <hr />
-      </article>
-  </div>
-</div>
