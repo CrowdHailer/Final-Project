@@ -3,3 +3,4 @@ Update
 <%= @user.github_username %>
 <%= @user.email %>
 <%= image_tag 'test.jpg' %>
+<%= 'You are not yet confirmed as a maker' unless @user.verified_maker %>
