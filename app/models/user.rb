@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.github_username = auth.info.nickname
       user.profile_image = auth.extra.raw_info.avatar_url
+      user.email = auth.info.email
       user.name = auth.info.name
       user.oauth_token = auth.credentials.token
       # user.oauth_expires_at = Time.at(auth.credentials.expires_at)
