@@ -5,6 +5,8 @@ Update
 <%= image_tag 'test.jpg' %>
 <%= 'You are not yet confirmed as a maker' unless @user.verified_maker %>
 
+<%= 'Updates saved' if @saved %>
+
 <%= form_for(@user, url: {action: "update_details"}) do |f| %>
 	<%= f.text_field :email %>
 	<%= f.text_field :cohort %>

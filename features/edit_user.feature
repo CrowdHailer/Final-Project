@@ -18,7 +18,7 @@ Feature: Edit the signed-in person's details
 		Given I have been confirmed as a Maker
 		When I visit the user edit page
 		And I should not see "You are not yet confirmed as a maker"
-  @wip
+		
 	Scenario: Edit my details	
 	  Given I have been confirmed as a Maker
 	  When I visit the user edit page
