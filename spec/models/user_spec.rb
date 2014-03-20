@@ -13,6 +13,12 @@
 #  email            :string(255)
 #  verified_maker   :boolean          default(FALSE)
 #  github_username  :string(255)
+#  profile_image    :string(255)
+#  cohort           :string(255)
+#  seeking_work     :datetime
+#  admin            :boolean          default(FALSE)
+#  text             :string(255)
+#  bio              :string(255)
 #
 
 require 'spec_helper'
