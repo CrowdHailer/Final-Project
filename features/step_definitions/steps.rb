@@ -1,6 +1,11 @@
 
 Given(/^I visit the "([^\"]+)" page$/) do |path_name|
 
+  # user1 = User.create(name: 'TestName1', github_username: 'Test1', uid: '123', provider: 'github', profile_image: 'test.jpg')
+  # user1.confirm_maker
+  # raise User.last.inspect
+
+
   case path_name
   when 'home'
     visit root_path
@@ -23,4 +28,8 @@ end
 
 Then(/^I should see users github profile image$/) do
   expect(page).to have_css('img')
+end
+
+Then(/^I should see user name$/) do
+  expect(page).to have_content('TestName1')
 end

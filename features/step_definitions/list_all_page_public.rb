@@ -3,7 +3,8 @@ When(/^I click "(.*?)"$/) do |button|
 end
 
 Given(/^There is a confirmed maker$/) do
-  user1 = User.create(name: 'TestName1', github_username: 'Test1', uid: '123', provider: 'github', profile_image: 'test.jpg')
+  # raise "Hello"
+  user1 = User.create!(name: 'TestName1', github_username: 'Test1', uid: '123', provider: 'github', profile_image: 'test.jpg')
   user1.confirm_maker
 end
 
