@@ -20,3 +20,7 @@ end
 When(/^I sign out$/) do
   click_link "Sign out"
 end
+
+Then(/^I should see users github profile image$/) do
+  expect(page).to have_css('img')
+end
