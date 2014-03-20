@@ -19,24 +19,23 @@ require 'spec_helper'
 
 describe 'User' do
 
-  let (:new_user) {
-    User.new(name: "John Doe", email: "test@test.com", provider: "github", github_username: 'Dave')
-  }
 
   context 'Empty user validations' do
+
     let (:empty_user) { User.new }
+
     [:github_username, :uid, :provider].each do |attribute|
       it "should require a #{attribute}" do
         expect(empty_user).to be_invalid
         expect(empty_user.errors[attribute]).not_to be_empty
       end
     end
+    
   end
 
   context 'Authenticated github user' do
 
     before(:all) do
-      ap User.all
       visit "/auth/github"
       @user = User.find_by_github_username('githubME')
     end
@@ -55,31 +54,35 @@ describe 'User' do
         expect(@user.send(attribute)).to eq(value)
       end
     end
+  
   end
+  
+  context 'User privileges' do
+
+    before(:each) do
+      visit "/auth/github"
+      @user = User.find_by_github_username('githubME')
+    end
+
+    it 'should not be a verified maker' do
+      expect(@user).not_to be_verified_maker
+    end
+
+    it "should be able to become a verified maker" do
+      @user.confirm_maker
+      expect(@user).to be_verified_maker
+    end
+
+  end
+
+  let (:new_user) {
+    User.new(name: "John Doe", email: "test@test.com", provider: "github", github_username: 'Dave')
+  }
 
   subject { new_user }
 
-  it { should respond_to (:name) }
-  it { should respond_to (:email) }
-  it { should respond_to (:verified_maker?) }
-  it { should respond_to (:profile_image) }
   it { should respond_to (:cohort) }
   it { should respond_to (:seeking_work) }
-
-
-  it 'should have an email' do
-    expect(new_user.email).to eq("test@test.com")
-  end
-
-  it 'should not be a verified maker when created' do
-    expect(new_user).not_to be_verified_maker
-  end
-
-  it "should be able to become a verified maker" do
-    expect(new_user).not_to be_verified_maker
-    new_user.confirm_maker
-    expect(new_user).to be_verified_maker
-  end
 
   it "should know all the verified makers" do
     user1 = User.create(name: "First User",  github_username: 'Dave',   uid: 1, provider: "github")
@@ -90,9 +93,6 @@ describe 'User' do
     user2.confirm_maker
     expect(User.verified_makers).to eq([user1, user2])
   end
-
-
-
 
 end
 
