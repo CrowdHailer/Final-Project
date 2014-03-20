@@ -73,6 +73,15 @@ describe 'User' do
       expect(@user).to be_verified_maker
     end
 
+    it 'should not be an admin' do
+      expect(@user).not_to be_admin
+    end
+
+    it "should be able to become an admin" do
+      @user.make_admin
+      expect(@user).to be_admin
+    end
+
   end
 
   let (:new_user) {
