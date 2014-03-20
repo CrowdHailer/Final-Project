@@ -41,16 +41,25 @@ class User < ActiveRecord::Base
 
   def confirm_maker
     self.verified_maker = true
-    self.save
+    save!
   end
 
   def make_admin
     self.admin = true
-    self.save
+    save!
+  end
+
+  def set_as_available
+    self.seeking_work = Time.new
+    save!
+  end
+
+  def seeking_work?
+    (seeking_work || Time.new(1970)) > Time.now - 2.weeks
   end
 
   def self.verified_makers
-    User.all.select{ |user| user.verified_maker? }
+    User.where(verified_maker: true)
   end
 
   def github

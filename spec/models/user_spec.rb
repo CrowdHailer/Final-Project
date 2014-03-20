@@ -84,6 +84,29 @@ describe 'User' do
 
   end
 
+  context 'Seeking work' do
+
+    before(:each) do
+      visit "/auth/github"
+      @user = User.find_by_github_username('githubME')
+    end
+
+    it 'should not be seeking work' do
+      expect(@user).not_to be_seeking_work
+    end
+
+    it 'should be able to seek work from the current time' do
+      @user.set_as_available
+      expect(@user).to be_seeking_work
+    end
+
+    it 'seeking work field should expire' do
+      @user.seeking_work = Time.new(1970)
+      expect(@user).not_to be_seeking_work
+    end
+
+  end
+
   let (:new_user) {
     User.new(name: "John Doe", email: "test@test.com", provider: "github", github_username: 'Dave')
   }
@@ -91,7 +114,6 @@ describe 'User' do
   subject { new_user }
 
   it { should respond_to (:cohort) }
-  it { should respond_to (:seeking_work) }
 
   it "should know all the verified makers" do
     user1 = User.create(name: "First User",  github_username: 'Dave',   uid: 1, provider: "github")
