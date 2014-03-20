@@ -4,7 +4,6 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'redcarpet'
 gem 'foundation-rails'
-gem 'webmock'
 gem 'rails', '4.0.3'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
@@ -25,6 +24,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'poltergeist'
+  gem 'webmock'
 end
 
 group :development do
