@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   end
 
   def self.verified_makers
-    User.all.select{ |user| user.verified_maker? }
+    User.where(verified_maker: true)
   end
 
   def github
