@@ -71,7 +71,7 @@ RSpec.configure do |config|
       :info => {
                 :nickname => 'githubME',
                 :name  => 'Mr Test',
-                :email => 'test@example.com'
+                :email => 'test@test.com'
               },
       :extra => {
       :raw_info => {
