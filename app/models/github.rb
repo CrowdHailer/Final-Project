@@ -47,7 +47,7 @@ class Github
     JSON.parse(raw_data, :symbolize_names => true)
   end
 
-  def profile_image
-    "https://avatars1.githubusercontent.com/u/#{profile_image}"
-  end
+  # def profile_image
+  #   "https://avatars1.githubusercontent.com/u/#{profile_image}"
+  # end
 end

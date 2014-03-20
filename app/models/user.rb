@@ -65,4 +65,8 @@ class User < ActiveRecord::Base
   def github
     Github.new(github_username)
   end
+
+  # def profile_image
+  #   "https://avatars1.githubusercontent.com/u/#{profile_image}"
+  # end
 end
