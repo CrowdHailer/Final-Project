@@ -33,3 +33,7 @@ end
 Then(/^I should see user name$/) do
   expect(page).to have_content('TestName1')
 end
+
+Then(/^I should see user bio$/) do
+  expect(page).to have_content('The life and times of a developer')
+end
