@@ -9,7 +9,7 @@ Feature: Home page content
 
   Scenario: Github sign-in 
     Then I should see "Sign in with Github"
-
+    
   Scenario: View user image
   	Then I should see users github profile image
   	

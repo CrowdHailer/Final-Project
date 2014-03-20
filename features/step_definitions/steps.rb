@@ -22,5 +22,5 @@ When(/^I sign out$/) do
 end
 
 Then(/^I should see users github profile image$/) do
-  expect(page).to have_content('test.jpg')
+  expect(page).to have_css('img')
 end
