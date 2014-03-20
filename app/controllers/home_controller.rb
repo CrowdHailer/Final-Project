@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @user = current_user
-    # @showcase_user = User.random
+    @user = User.first 
   end
 
 end
