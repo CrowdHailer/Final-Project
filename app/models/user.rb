@@ -44,6 +44,11 @@ class User < ActiveRecord::Base
     self.save
   end
 
+  def make_admin
+    self.admin = true
+    self.save
+  end
+
   def self.verified_makers
     User.all.select{ |user| user.verified_maker? }
   end
