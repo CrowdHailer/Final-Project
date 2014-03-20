@@ -100,6 +100,11 @@ describe 'User' do
       expect(@user).to be_seeking_work
     end
 
+    it 'seeking work field should expire' do
+      @user.seeking_work = Time.new(1970)
+      expect(@user).not_to be_seeking_work
+    end
+
   end
 
   let (:new_user) {

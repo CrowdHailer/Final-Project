@@ -54,6 +54,10 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def seeking_work?
+    (seeking_work || Time.new(1970)) > Time.now - 2.weeks
+  end
+
   def self.verified_makers
     User.where(verified_maker: true)
   end
