@@ -12,6 +12,5 @@ class UsersController < ApplicationController
 
   def edit_details
   	@user = current_user
-  	puts @user.inspect
   end
 end
