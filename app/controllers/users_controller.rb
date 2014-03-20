@@ -5,8 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show_details
-
   	@showcase_user = User.create!(name: 'Pussy Galore', email: 'test@test.com', github_username: 'CrowdHailer', uid: '2', provider: 'google')
-  	
   end
+
 end
