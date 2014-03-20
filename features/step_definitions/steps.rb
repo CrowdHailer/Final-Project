@@ -35,5 +35,7 @@ Then(/^I should see user name$/) do
 end
 
 Then(/^I should see user bio$/) do
+  puts "**" * 80
+  puts "**" * 80
   expect(page).to have_content('The life and times of a developer')
 end
