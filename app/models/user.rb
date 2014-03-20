@@ -41,12 +41,12 @@ class User < ActiveRecord::Base
 
   def confirm_maker
     self.verified_maker = true
-    self.save
+    save!
   end
 
   def make_admin
     self.admin = true
-    self.save
+    save!
   end
 
   def self.verified_makers
