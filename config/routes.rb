@@ -9,6 +9,7 @@ FinalProject::Application.routes.draw do
 
   get '/users'                    => 'users#show_all'       
   get '/user/:username'           => 'users#show_details'
+  get '/edit'                     => 'users#edit_details'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
