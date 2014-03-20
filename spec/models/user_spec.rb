@@ -19,6 +19,18 @@ require 'spec_helper'
 
 describe 'User' do
 
+  auth_details = {
+    provider: 'github',
+    uid: '123456789',
+    name: 'Mr Test',
+    email: 'test@test.com',
+    github_username: 'githubME',
+    profile_image: 'smile.jpg'
+  }
+  extra_details = {
+    cohort: 'Jan14'
+  }
+  valid_details = auth_details.merge(extra_details)
 
   context 'Empty user validations' do
 
@@ -39,15 +51,6 @@ describe 'User' do
       visit "/auth/github"
       @user = User.find_by_github_username('githubME')
     end
-
-    auth_details = {
-      provider: 'github',
-      uid: '123456789',
-      name: 'Mr Test',
-      email: 'test@test.com',
-      github_username: 'githubME',
-      profile_image: 'smile.jpg'
-    }
 
     auth_details.each do |attribute, value|
       it "should have a #{attribute}" do
@@ -107,13 +110,13 @@ describe 'User' do
 
   end
 
-  let (:new_user) {
-    User.new(name: "John Doe", email: "test@test.com", provider: "github", github_username: 'Dave')
-  }
+  context 'Futher user details' do
+    let(:user) { User.new(valid_details) }
 
-  subject { new_user }
-
-  it { should respond_to (:cohort) }
+    it 'should have a cohort' do
+      expect(user.cohort).to eq('Jan14')
+    end
+  end
 
   it "should know all the verified makers" do
     user1 = User.create(name: "First User",  github_username: 'Dave',   uid: 1, provider: "github")
