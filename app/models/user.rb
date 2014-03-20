@@ -49,6 +49,11 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def set_as_available
+    self.seeking_work = Time.new
+    save!
+  end
+
   def self.verified_makers
     User.where(verified_maker: true)
   end

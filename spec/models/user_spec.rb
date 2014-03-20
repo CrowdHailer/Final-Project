@@ -95,6 +95,11 @@ describe 'User' do
       expect(@user).not_to be_seeking_work
     end
 
+    it 'should be able to seek work from the current time' do
+      @user.set_as_available
+      expect(@user).to be_seeking_work
+    end
+
   end
 
   let (:new_user) {
