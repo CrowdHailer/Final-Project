@@ -1,6 +1,5 @@
 
 Given(/^I visit the "([^\"]+)" page$/) do |path_name|
-
   case path_name
   when 'home'
     visit root_path
@@ -23,4 +22,8 @@ end
 
 Then(/^I should see users github profile image$/) do
   expect(page).to have_css('img')
+end
+
+Then(/^I should see user name$/) do
+  expect(page).to have_content('TestName1')
 end

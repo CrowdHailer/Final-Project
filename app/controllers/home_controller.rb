@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @user = User.first 
+    @user = User.last
   end
 
 end
