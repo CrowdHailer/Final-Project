@@ -1,6 +1,7 @@
 Feature: Home page content
-
+	
   Background: 
+  	Given There is a confirmed maker
     Given I visit the "home" page
 
   Scenario: Public view
