@@ -12,4 +12,7 @@ class UsersController < ApplicationController
   	@user = current_user
   end
 
+  def update_details
+    
+  end
 end
