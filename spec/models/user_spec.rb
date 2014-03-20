@@ -33,6 +33,14 @@ describe 'User' do
     end
   end
 
+  context 'Authenticated github user' do
+    it 'auth testing' do
+      visit "/auth/github"
+      user = User.find_by_github_username('githubME')
+      expect(user.profile_image).to eq('a.test')
+    end
+  end
+
   subject { new_user }
 
   it { should respond_to (:name) }
@@ -68,11 +76,6 @@ describe 'User' do
   end
 
 
-  it 'auth testing' do
-    visit "/auth/github"
-    user = User.find_by_github_username('githubME')
-    expect(user.profile_image).to eq('a.test')
-  end
 
 
 end
