@@ -34,10 +34,12 @@ describe 'User' do
   end
 
   context 'Authenticated github user' do
-    before(:all) { visit "/auth/github" }
-    it 'auth testing' do
-      user = User.find_by_github_username('githubME')
-      expect(user.profile_image).to eq('a.test')
+    before(:all) do
+      visit "/auth/github"
+      @user = User.find_by_github_username('githubME')
+    end
+    it 'should have a profile image' do
+      expect(@user.profile_image).to eq('a.test')
     end
   end
 
