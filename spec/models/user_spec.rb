@@ -22,7 +22,16 @@ describe 'User' do
   let (:new_user) {
     User.new(name: "John Doe", email: "test@test.com", provider: "github", github_username: 'Dave')
   }
-  let (:empty_user) { User.new }
+
+  context 'Empty user validations' do
+    let (:empty_user) { User.new }
+    [:github_username, :uid, :provider].each do |attribute|
+      it "should require a #{attribute}" do
+        expect(empty_user).to be_invalid
+        expect(empty_user.errors[attribute]).not_to be_empty
+      end
+    end
+  end
 
   subject { new_user }
 
@@ -58,12 +67,6 @@ describe 'User' do
     expect(User.verified_makers).to eq([user1, user2])
   end
 
-  [:github_username, :uid, :provider].each do |attribute|
-    it "should require a #{attribute}" do
-      expect(empty_user).to be_invalid
-      expect(empty_user.errors[attribute]).not_to be_empty
-    end
-  end
 
   it 'auth testing' do
     visit "/auth/github"
