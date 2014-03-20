@@ -55,7 +55,7 @@ RSpec.configure do |config|
               },
       :extra => {
       :raw_info => {
-        :avatar_url => 'a.test'
+        :avatar_url => 'smile.jpg'
         }
       },
       :credentials => {

@@ -34,12 +34,26 @@ describe 'User' do
   end
 
   context 'Authenticated github user' do
+
     before(:all) do
+      ap User.all
       visit "/auth/github"
       @user = User.find_by_github_username('githubME')
     end
-    it 'should have a profile image' do
-      expect(@user.profile_image).to eq('a.test')
+
+    auth_details = {
+      provider: 'github',
+      uid: '123456789',
+      name: 'Mr Test',
+      email: 'test@test.com',
+      github_username: 'githubME',
+      profile_image: 'smile.jpg'
+    }
+
+    auth_details.each do |attribute, value|
+      it "should have a #{attribute}" do
+        expect(@user.send(attribute)).to eq(value)
+      end
     end
   end
 
