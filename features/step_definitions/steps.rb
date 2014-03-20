@@ -1,11 +1,5 @@
 
 Given(/^I visit the "([^\"]+)" page$/) do |path_name|
-
-  # user1 = User.create(name: 'TestName1', github_username: 'Test1', uid: '123', provider: 'github', profile_image: 'test.jpg')
-  # user1.confirm_maker
-  # raise User.last.inspect
-
-
   case path_name
   when 'home'
     visit root_path
