@@ -11,6 +11,7 @@ FinalProject::Application.routes.draw do
   get '/user/:github_username'    => 'users#show_details',   :as => :show_details
   get '/edit'                     => 'users#edit_details',   :as => :edit
   patch '/users'                  => 'users#update_details', :as => :update
+  get '/admin'                    => 'users#admin',          :as => :admin
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

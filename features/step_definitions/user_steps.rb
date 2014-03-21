@@ -10,6 +10,12 @@ Given(/^I am confirmed$/) do
   User.first.confirm_maker
 end
 
+Given(/^I am granted admin privilages$/) do
+  user = User.first
+  user.admin = true
+  user.save!
+end
+
 Given(/^I have been confirmed as a Maker$/) do
   user = User.find_by_name('Mr Test')
   user.confirm_maker

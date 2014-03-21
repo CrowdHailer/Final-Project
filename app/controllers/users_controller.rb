@@ -22,7 +22,12 @@ class UsersController < ApplicationController
     @user = current_user
     @user.update_attributes(user_params)
     saved = @user.save
-    redirect_to "/edit?#{'saved=true' if saved }"
+    redirect_to "/edit?#{'saved=true' if saved }" #belongs in flash
+  end
+
+  def admin
+    @user = current_user
+    redirect_to root_path, alert: 'You must have admin privilages to view admin' unless (@user && @user.admin)
   end
 
   private
