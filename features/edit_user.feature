@@ -21,16 +21,10 @@ Feature: Edit the signed-in person's details
 
 	Scenario: Edit my details
 	  Given I fill in the following for the "user"
-
-
 	     | email         |  new.email@test.com |
 	     | cohort        |  Jan15              |
 	     | profile_image | joke.jpg            |
-
-	     | email          |  new.email@test.com |
-	     | cohort         |  Jan15              |
-	     | profile_image  | joke.jpg            |
-	     | bio 						|	 I am a maker       |
+	     | bio 					 |	 I am a maker      |
 
     And I press "Save"
     Then I should see "Updates saved"

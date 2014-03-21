@@ -8,6 +8,5 @@ Feature: Show one person's details
   	When I visit the user profile page
 	  Then I should see "Profile"
 
-  Scenario: Edit profile
-   Then I should see "Edit profile"
+
 
