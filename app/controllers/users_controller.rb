@@ -5,13 +5,15 @@ class UsersController < ApplicationController
   end
 
   def show_details
-  	@showcase_user = User.create!(name: 'Pussy Galore', email: 'test@test.com', github_username: 'CrowdHailer', uid: '2', provider: 'google')
+  	@showcase_user = User.find_by_github_username('params[:username]')
+    @user = current_user
+    redirect_to root_path unless @showcase_user
   end
 
   def edit_details
   	@user = current_user
     @saved = params[:saved]
-    redirect_to root_path if @user.nil?
+    redirect_to root_path unless @user
   end
 
   def update_details
