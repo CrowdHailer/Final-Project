@@ -9,7 +9,7 @@
                 <%= image_tag(user.profile_image) %>
             </div>
             <div class="large-9 columns" >
-        		<h1><%= link_to user.name, show_details_path(user.id) %></h1>
+        		<h1><%= link_to user.name, show_details_path(user.github_username) %></h1>
         		<p><%= user.email %></p>
         	</div>
         </div>

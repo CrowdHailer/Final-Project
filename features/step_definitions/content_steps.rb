@@ -17,10 +17,6 @@ Then(/^I should see the following:$/) do |contents|
   end
 end
 
-# Then(/^I should see user bio$/) do
-#   expect(page).to have_content('The life and times of a developer')
-# end
-
 Then(/^I should see the confirmed maker$/) do
   expect(page).to have_content('TestName1')
 end
