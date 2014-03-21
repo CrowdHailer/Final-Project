@@ -4,15 +4,14 @@ Feature: Edit the signed-in person's details
     Given I sign in
    	When I visit the "user edit" page
 
-  Scenario: Edit user
-	  Then I should see "Update"
-
-	Scenario: My Details
-	  Then I should see "Mr Test"
-	  And I should see "CrowdHailer"
-	  And I should see "test@example.com"
+  Scenario: Page shows my details
+    Then I should see the following:
+	   | Update |
+	   | Mr Test |
+	   | CrowdHailer |
+	   | test@example.com |
+     | You are not yet confirmed as a maker |
 	  And I should see "my profile" image
-	  And I should see "You are not yet confirmed as a maker"
 
 	Scenario: Confirmed as a Maker
 		Given I have been confirmed as a Maker
