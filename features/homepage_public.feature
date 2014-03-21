@@ -1,5 +1,4 @@
 Feature: Home page content
-<<<<<<< HEAD
 
   Background:
   	Given There is a confirmed maker
