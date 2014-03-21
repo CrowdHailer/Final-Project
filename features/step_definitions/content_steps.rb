@@ -10,6 +10,13 @@ Then(/^I should see "(.*)" image$/) do |image_title|
   expect(page).to have_css('img')
 end
 
+Then(/^I should see the following:$/) do |contents|
+  items = contents.raw.flatten
+  items.each do |item|
+    expect(page).to have_content(item)
+  end
+end
+
 Then(/^I should see user name$/) do
   expect(page).to have_content('TestName1')
 end
