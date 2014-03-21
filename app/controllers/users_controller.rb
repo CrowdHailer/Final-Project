@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def admin
     @user = current_user
-    redirect_to root_path, alert: 'You must have admin privilages to view admin' unless @user.admin
+    redirect_to root_path, alert: 'You must have admin privilages to view admin' unless (@user && @user.admin)
   end
 
   private
