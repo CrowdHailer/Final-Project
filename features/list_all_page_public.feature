@@ -1,7 +1,7 @@
 Feature: List of all people content
 
   Background:
-    Given There is a confirmed maker
+    Given there is a confirmed maker
     Given There is an uncofirmed maker
     When I visit the "home" page
     And I click "List all"

@@ -5,13 +5,15 @@ class UsersController < ApplicationController
   end
 
   def show_details
-  	@showcase_user = User.create!(name: 'Pussy Galore', email: 'test@test.com', github_username: 'CrowdHailer', uid: '2', provider: 'google')
+  	@showcase_user = User.find(params[:id])
+    @user = current_user
+    redirect_to root_path unless @showcase_user
   end
 
   def edit_details
   	@user = current_user
     @saved = params[:saved]
-    redirect_to root_path if @user.nil?
+    redirect_to root_path unless @user
   end
 
   def update_details
@@ -24,6 +26,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :profile_image, :cohort)
+    params.require(:user).permit(:name, :email, :profile_image, :cohort, :bio)
   end
 end
