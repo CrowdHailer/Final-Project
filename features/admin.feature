@@ -5,5 +5,5 @@ Feature: Admin content available to admin users
     And I am granted admin privilages
     @wip
   Scenario: Page content
-    When I visit "admin" page
+    When I visit the "admin" page
     Then i should see "admin"
