@@ -11,9 +11,7 @@ Given(/^I am confirmed$/) do
 end
 
 Given(/^I am granted admin privilages$/) do
-  user = User.first
-  user.make_admin
-  user.save!
+  User.first.make_admin
 end
 
 Given(/^I have been confirmed as a Maker$/) do
