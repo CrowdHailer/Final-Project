@@ -7,22 +7,18 @@ class UsersController < ApplicationController
   def show_details
   	@showcase_user = User.find_by_github_username(params['github_username'])
     @user = current_user
-    flash.alert = "User profile not found " unless @user
-    redirect_to root_path unless @showcase_user
+    redirect_to root_path, alert: 'User profile not found' unless @showcase_user
   end
 
   def edit_details
   	@user = current_user
-    @saved = params[:saved]
-    flash.alert = "You must be logged in to edit profile" unless @user
-    redirect_to root_path unless @user
+    redirect_to root_path, alert: 'You must be logged in to edit profile' unless @user
   end
 
   def update_details
     @user = current_user
     @user.update_attributes(user_params)
-    saved = @user.save
-    redirect_to "/edit?#{'saved=true' if saved }" #belongs in flash
+    redirect_to edit_path, notice: 'Updates saved'
   end
 
   def admin

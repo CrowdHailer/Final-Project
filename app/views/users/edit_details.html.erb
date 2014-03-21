@@ -11,7 +11,6 @@
       </div>
     </div>
 		<%= 'You are not yet confirmed as a maker' unless @user.verified_maker %><br>
-		<%= 'Updates saved' if @saved %>
 		<%= form_for(@user, url: { action: "update_details" }) do |f| %>
 			Email: <%= @user.email %> <%= f.text_field :email %><br>
 			Cohort: <%= @user.cohort %><%= f.text_field :cohort %><br>
