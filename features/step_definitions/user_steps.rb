@@ -12,7 +12,7 @@ end
 
 Given(/^I am granted admin privilages$/) do
   user = User.first
-  user.admin = true
+  user.make_admin
   user.save!
 end
 
