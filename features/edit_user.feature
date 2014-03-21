@@ -20,9 +20,7 @@ Feature: Edit the signed-in person's details
 		And I should not see "You are not yet confirmed as a maker"
 		
 	Scenario: Edit my details	
-	  Given I have been confirmed as a Maker
-	  When I visit the user edit page
-	  Then I fill in the following for the "user"
+	  Given I fill in the following for the "user"
 
 	     | email         |  new.email@test.com | 
 	     | cohort        |  Jan15              |
