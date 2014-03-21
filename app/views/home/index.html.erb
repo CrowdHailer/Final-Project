@@ -14,10 +14,11 @@
 
         <!-- <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p> -->
 
-        <a class='button' href='/users'>List all</a>
+        <%= link_to 'List all', users_path, :class => "button" %>
       </div>
 
       <div class="large-6 columns" >
+
         <p><%= @user.bio %>hello</p>
       </div>
       <% end %>
