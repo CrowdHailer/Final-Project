@@ -3,8 +3,7 @@ Feature: List of all people content
   Background:
     Given there is a confirmed maker
     Given There is an uncofirmed maker
-    When I visit the "home" page
-    And I click "List all"
+    When I visit the "user list" page
 
   Scenario: Show list
 	  Then I should see "All Makers, graduates and current students"
