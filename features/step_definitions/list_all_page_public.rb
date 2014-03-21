@@ -11,11 +11,3 @@ end
 Given(/^There is an uncofirmed maker$/) do
   user2 = User.create(name: 'TestName2', github_username: 'Test2', uid: '1234', provider: 'github')
 end
-
-Then(/^I should see the confirmed maker$/) do
-  expect(page).to have_content('TestName1')
-end
-
-Then(/^I should not see the unconfirmed maker$/) do
-  expect(page).not_to have_content('TestName2')
-end

@@ -9,16 +9,19 @@ Given(/^I visit the "([^\"]+)" page$/) do |path_name|
   end
 end
 
+When(/^I visit the user profile page$/) do
+  visit "/user/#{@showcase_user.github_username}"
+  expect(page).to have_content('Profile')
+end
+
+# Page content
+
 Then(/^I should see "(.*?)"$/) do |text_snippet|
   expect(page).to have_content(text_snippet)
 end
 
-Given(/^I sign in$/) do
- visit "/auth/github"
-end
-
-When(/^I sign out$/) do
-  click_link "Sign out"
+Given(/^I should not see "(.*?)"$/) do |text_snippet|
+  expect(page).not_to have_content(text_snippet)
 end
 
 Then(/^I should see users github profile image$/) do
@@ -30,7 +33,24 @@ Then(/^I should see user name$/) do
 end
 
 Then(/^I should see user bio$/) do
-  puts "**" * 80
-  puts "**" * 80
   expect(page).to have_content('The life and times of a developer')
 end
+
+Then(/^I should see the confirmed maker$/) do
+  expect(page).to have_content('TestName1')
+end
+
+Then(/^I should not see the unconfirmed maker$/) do
+  expect(page).not_to have_content('TestName2')
+end
+
+# These belong somewhere else
+
+Given(/^I sign in$/) do
+ visit "/auth/github"
+end
+
+When(/^I sign out$/) do
+  click_link "Sign out"
+end
+
