@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20140320164030) do
     t.string   "cohort"
     t.datetime "seeking_work"
     t.boolean  "admin",            default: false
-    t.string   "text"
     t.string   "bio"
   end
 
