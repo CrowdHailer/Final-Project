@@ -9,9 +9,9 @@ Feature: Edit the signed-in person's details
 
 	Scenario: My Details
 	  Then I should see "Mr Test"
-	  And I should see "Billybob"
+	  And I should see "CrowdHailer"
 	  And I should see "test@example.com"
-	  And I should see my profile picture
+	  And I should see "my profile" image
 	  And I should see "You are not yet confirmed as a maker"
 
 	Scenario: Confirmed as a Maker

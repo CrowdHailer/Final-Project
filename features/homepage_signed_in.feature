@@ -1,7 +1,7 @@
 Feature: Home page content when signed in
 
   Background:
-    Given There is a confirmed maker
+    Given there is a confirmed maker
     Given I visit the "home" page
     And I sign in
 
