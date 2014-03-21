@@ -13,5 +13,6 @@ Feature: Home page content
   Scenario: View user image
   	Then I should see users github profile image
   	And I should see user name
+    And I should see user bio
 
   	

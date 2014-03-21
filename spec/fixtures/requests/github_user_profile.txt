@@ -1,0 +1,54 @@
+HTTP/1.1 200 OK
+Server: GitHub.com
+Date: Fri, 21 Mar 2014 08:23:20 GMT
+Content-Type: application/json; charset=utf-8
+Status: 200 OK
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+X-RateLimit-Reset: 1395393800
+Cache-Control: public, max-age=60, s-maxage=60
+Last-Modified: Fri, 21 Mar 2014 07:28:32 GMT
+ETag: "0223ea7d5cf8c47b56b7b7091122ae00"
+Vary: Accept
+X-GitHub-Media-Type: github.beta
+X-Content-Type-Options: nosniff
+Content-Length: 1351
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+Access-Control-Allow-Origin: *
+X-GitHub-Request-Id: 259D239A:5A9F:D5201E:532BF6F7
+Vary: Accept-Encoding
+X-Served-By: 88d924ed861736d2749ce1a55766cb53
+
+{
+  "login": "CrowdHailer",
+  "id": 5862302,
+  "avatar_url": "https://avatars.githubusercontent.com/u/5862302?",
+  "gravatar_id": "7a81671321dd8295db622ad22ebfec05",
+  "url": "https://api.github.com/users/CrowdHailer",
+  "html_url": "https://github.com/CrowdHailer",
+  "followers_url": "https://api.github.com/users/CrowdHailer/followers",
+  "following_url": "https://api.github.com/users/CrowdHailer/following{/other_user}",
+  "gists_url": "https://api.github.com/users/CrowdHailer/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/CrowdHailer/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/CrowdHailer/subscriptions",
+  "organizations_url": "https://api.github.com/users/CrowdHailer/orgs",
+  "repos_url": "https://api.github.com/users/CrowdHailer/repos",
+  "events_url": "https://api.github.com/users/CrowdHailer/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/CrowdHailer/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": "Peter Saxton",
+  "company": "",
+  "blog": "www.londonlayout.co.uk",
+  "location": "London",
+  "email": "petersaxton@londonlayout.co.uk",
+  "hireable": true,
+  "bio": null,
+  "public_repos": 38,
+  "public_gists": 0,
+  "followers": 11,
+  "following": 23,
+  "created_at": "2013-11-05T17:29:46Z",
+  "updated_at": "2014-03-21T07:28:32Z"
+}

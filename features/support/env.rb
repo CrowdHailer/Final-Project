@@ -8,9 +8,9 @@ require 'cucumber/rails'
 require 'webmock'
 include WebMock
 Before do
-  stub_request(:any, 'https://api.github.com/users/CrowdHailer').to_return(File.new('tmp/stubs/github_user_profile.txt'))
-  stub_request(:any, 'https://api.github.com/users/CrowdHailer/repos').to_return(File.new('tmp/stubs/github_user_repos.txt'))
-  stub_request(:any, 'https://api.github.com/repos/CrowdHailer/CV/contents/README.md').to_return(File.new('tmp/stubs/github_repo_readme.txt'))
+  stub_request(:any, 'https://api.github.com/users/CrowdHailer').to_return(File.new('spec/fixtures/requests/github_user_profile.txt'))
+  stub_request(:any, 'https://api.github.com/users/CrowdHailer/repos').to_return(File.new('spec/fixtures/requests/github_user_repos.txt'))
+  stub_request(:any, 'https://api.github.com/repos/CrowdHailer/CV/contents/README.md').to_return(File.new('spec/fixtures/requests//github_repo_readme.txt'))
 end
 # WebMock.disable_net_connect!(allow_localhost: true)
 

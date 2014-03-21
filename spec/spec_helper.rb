@@ -5,8 +5,8 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rails'
 
-require 'webmock/rspec'
-WebMock.disable_net_connect!(allow_localhost: true)
+require_relative 'support/omniauth'
+require_relative 'support/webmock'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -65,24 +65,4 @@ RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL
 
-  OmniAuth.config.test_mode = true
-  OmniAuth.config.add_mock(:github, {
-      :uid  => '123456789',
-      :info => {
-                :nickname => 'githubME',
-                :name  => 'Mr Test',
-                :email => 'test@test.com'
-              },
-      :extra => {
-      :raw_info => {
-        :avatar_url => 'smile.jpg'
-        }
-      },
-      :credentials => {
-                      :access_token => 'a'
-                      }
-    })
-
-
 end
-
