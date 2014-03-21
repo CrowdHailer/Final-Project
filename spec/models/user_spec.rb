@@ -34,7 +34,10 @@ describe 'User' do
     profile_image: 'smile.jpg'
   }
   extra_details = {
-    cohort: 'Jan14'
+    cohort: 'Jan14',
+    bio: 'Man I SOOOOO love coding, tis dope',
+    twitter: '@twitterperson',
+    linkedin: 'testperson.com'
   }
   valid_details = auth_details.merge(extra_details)
 
@@ -118,9 +121,11 @@ describe 'User' do
 
   context 'Futher user details' do
     let(:user) { User.new(valid_details) }
-
-    it 'should have a cohort' do
-      expect(user.cohort).to eq('Jan14')
+    
+    extra_details.each do | attribute, value |
+      it "should have a #{attribute}" do
+        expect(user.send(attribute)).to eq(value)
+      end
     end
   end
 
