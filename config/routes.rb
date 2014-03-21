@@ -8,8 +8,8 @@ FinalProject::Application.routes.draw do
   get '/auth/failure'             => 'sessions#failure'
 
   get '/users'                    => 'users#show_all'       
-  get '/user/:username'           => 'users#show_details'
-  get '/edit'                     => 'users#edit_details'
+  get '/user/:id'           => 'users#show_details',  :as => :show_details
+  get '/edit'                     => 'users#edit_details', :as => :edit
   patch '/users'                  => 'users#update_details',:as => :update
 
   # The priority is based upon order of creation: first created -> highest priority.
