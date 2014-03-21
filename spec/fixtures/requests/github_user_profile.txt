@@ -1,14 +1,14 @@
 HTTP/1.1 200 OK
 Server: GitHub.com
-Date: Thu, 20 Mar 2014 09:55:02 GMT
+Date: Fri, 21 Mar 2014 08:23:20 GMT
 Content-Type: application/json; charset=utf-8
 Status: 200 OK
 X-RateLimit-Limit: 60
-X-RateLimit-Remaining: 39
-X-RateLimit-Reset: 1395312600
+X-RateLimit-Remaining: 59
+X-RateLimit-Reset: 1395393800
 Cache-Control: public, max-age=60, s-maxage=60
-Last-Modified: Thu, 20 Mar 2014 07:42:28 GMT
-ETag: "421d52659227f8e33c5042a2beb09901"
+Last-Modified: Fri, 21 Mar 2014 07:28:32 GMT
+ETag: "0223ea7d5cf8c47b56b7b7091122ae00"
 Vary: Accept
 X-GitHub-Media-Type: github.beta
 X-Content-Type-Options: nosniff
@@ -16,9 +16,9 @@ Content-Length: 1351
 Access-Control-Allow-Credentials: true
 Access-Control-Expose-Headers: ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
 Access-Control-Allow-Origin: *
-X-GitHub-Request-Id: 259D239A:1A3A:E3F5BA:532ABAF6
+X-GitHub-Request-Id: 259D239A:5A9F:D5201E:532BF6F7
 Vary: Accept-Encoding
-X-Served-By: a8d8e492d6966f0c23dee2eed64c678a
+X-Served-By: 88d924ed861736d2749ce1a55766cb53
 
 {
   "login": "CrowdHailer",
@@ -50,5 +50,5 @@ X-Served-By: a8d8e492d6966f0c23dee2eed64c678a
   "followers": 11,
   "following": 23,
   "created_at": "2013-11-05T17:29:46Z",
-  "updated_at": "2014-03-20T07:42:28Z"
+  "updated_at": "2014-03-21T07:28:32Z"
 }

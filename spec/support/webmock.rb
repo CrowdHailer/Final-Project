@@ -8,3 +8,11 @@ end
 def github_user_profile
   load_fixture(__method__)
 end
+
+def github_user_repos
+  load_fixture(__method__)
+end
+
+def github_repo_readme
+  load_fixture(__method__)
+end
