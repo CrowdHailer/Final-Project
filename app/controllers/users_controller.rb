@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def edit_details
   	@user = current_user
     @saved = params[:saved]
+    redirect_to root_path if @user.nil?
   end
 
   def update_details

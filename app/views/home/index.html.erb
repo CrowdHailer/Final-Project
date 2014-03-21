@@ -7,9 +7,9 @@
         <hr />
       </article>
     </div>
-
+      <% if @user %>
       <div class="large-3 columns">
-        <%= image_tag(@user.profile_image) %>
+        <%= image_tag( @user.profile_image) %>
         <p><%= @user.name %></p>
 
         <!-- <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p> -->
@@ -20,6 +20,7 @@
       <div class="large-6 columns" >
         <p><%= @user.bio %>hello</p>
       </div>
+      <% end %>
 
     <aside class="large-3 columns" id="column_border">
       <h3>How we get to graduate</h3>
