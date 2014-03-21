@@ -1,15 +1,38 @@
-Update
-<%= @user.name %><br>
-<%= @user.github_username %><br>
-<%= @user.email %><br>
-<%= image_tag 'test.jpg' %><br>
-<%= 'You are not yet confirmed as a maker' unless @user.verified_maker %><br>
+<div class="row shadow">
+ 
+    <!-- Main Blog Content -->
+    <div class="large-12 columns" role="content">
+ 
+      <article>
+ 
+        <h3>Update<a href="#"></a> <%= @user.name %> </h3> 
+         
+        <div class="row">
+          <div class="large-6 columns">
+            <img src="http://placehold.it/400x240&text=[img]" />
+          </div>
+          <div class="large-6 columns">
+            <p>BIO</p>
+            <%= @user.bio %>
+          </div>
+          
+        </div>
 
-<%= 'Updates saved' if @saved %>
+         
+        <%= image_tag 'test.jpg' %><br>
+				<%= 'You are not yet confirmed as a maker' unless @user.verified_maker %><br>
 
-<%= form_for(@user, url: {action: "update_details"}) do |f| %>
-	<%= f.text_field :email %>
-	<%= f.text_field :cohort %>
-	<%= f.text_field :profile_image %>
-	<%= f.submit "Save" %>
-<% end %>
+				<%= 'Updates saved' if @saved %>
+
+				<%= form_for(@user, url: { action: "update_details" }) do |f| %>
+					Email: <%= @user.email %> <%= f.text_field :email %>
+					Cohort: <%= @user.cohort %><%= f.text_field :cohort %>
+					Profile image: <%= f.text_field :profile_image %>
+					Bio: <%= f.text_area :bio %>
+					<%= f.submit "Save" %>
+				<% end %>
+
+    </div>
+</div>
+
+
