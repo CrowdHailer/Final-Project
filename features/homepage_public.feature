@@ -11,7 +11,7 @@ Feature: Home page content
     Then I should see "Sign in with Github"
 
   Scenario: View user image
-  	Then I should see users github profile image
+  	Then I should see "users github profile" image
   	And I should see user name
     And I should see user bio
 
