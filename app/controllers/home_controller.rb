@@ -1,10 +1,6 @@
 class HomeController < ApplicationController
   def index
-  	u = User.find_by('verified_maker')
-  	puts u
-    # @user = u.first(:order => "RANDOM()")
-    # @user = User.first
-    @user = u
+  	@user = User.find_by('verified_maker')
   end
 
 end
