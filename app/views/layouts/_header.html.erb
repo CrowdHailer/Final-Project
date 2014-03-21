@@ -3,11 +3,7 @@
     <div class="large-12 columns header">
       <div class="nav-bar right">
         <ul class="button-group">
-          <% if @showcase_user == @user %>
-           <li>
-             <%= link_to 'Edit profile', edit_path, :class => "button github_button" %>
-            </li>
-          <% end %>
+
           <% if current_user %>
             <li>
               <%= link_to 'Sign out', signout_path, method: :delete, :class => "button github_button" %>
