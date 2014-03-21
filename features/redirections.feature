@@ -16,5 +16,5 @@ Feature: Redirection from forbidden pages
     When I visit the "admin" page
     Then I should see the following:
       | The showcase for graduates of Makers Academy |
-      | You must hve admin privilages to view admin  |
+      | You must have admin privilages to view admin  |
     

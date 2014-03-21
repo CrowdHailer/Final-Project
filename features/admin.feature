@@ -6,4 +6,4 @@ Feature: Admin content available to admin users
     @wip
   Scenario: Page content
     When I visit the "admin" page
-    Then i should see "admin"
+    Then I should see "admin"
