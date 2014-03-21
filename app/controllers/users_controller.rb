@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = current_user
     @user.update_attributes(user_params)
     saved = @user.save
-    redirect_to "/edit?#{'saved=true' if saved }" #belongs in flash
+    redirect_to edit_path, notice: 'Updates saved'
   end
 
   def admin

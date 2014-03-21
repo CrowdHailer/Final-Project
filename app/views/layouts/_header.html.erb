@@ -1,26 +1,19 @@
-  <!-- Nav Bar -->
- <div class="row shadow">
-    <div class="large-12 columns header">
-      <div class="nav-bar right">
-        <ul class="button-group">
-
-          <% if current_user %>
-            <li>
-              <%= link_to 'Sign out', signout_path, method: :delete, :class => "button github_button" %>
-            </li>
-          <% else %>
-            <li><a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= ENV['GITHUB_CLIENT_ID'] %>" class="button">Sign in with Github</a></li>
-          <% end %>
-        </ul>
-      </div>
-      <h1><%= link_to 'Full Stack People', root_path %></h1>
+<div class="row shadow">
+  <div class="large-12 columns header">
+    <div class="nav-bar right">
+      <ul class="button-group">
+        <% if current_user %>
+          <li>
+            <%= link_to 'Sign out', signout_path, method: :delete, :class => "button github_button" %>
+          </li>
+        <% else %>
+          <li><a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= ENV['GITHUB_CLIENT_ID'] %>" class="button">Sign in with Github</a></li>
+        <% end %>
+      </ul>
     </div>
+    <h1><%= link_to 'Full Stack People', root_path %></h1>
   </div>
-
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: ("#{name} row") %>
-    <% end -%>
-
-
-  <!-- Main Page Content and Sidebar -->
-
+</div>
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: ("#{name} row") %>
+<% end -%>
