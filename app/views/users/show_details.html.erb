@@ -1,7 +1,7 @@
 <div class="row shadow">
     <div class="large-12 columns" role="content">
       <article>
-        <h3>Profile<a href="#"></a> <%= @showcase_user.name %> </h3> 
+        <h3>Profile<a href="#"></a> <%= @showcase_user.name %> </h3>
         <div class="row">
           <div class="large-6 columns detail_image" >
              <%= image_tag @showcase_user.profile_image, width:"300px"%>
@@ -17,12 +17,12 @@
         <hr />
         <p>and its details</p>
       </article>
-      
+
       <% if current_user == @showcase_user %>
         <%= link_to 'Edit', edit_path %>
       <% end %>
     </div>
 </div>
- 
- 
+
+
 
