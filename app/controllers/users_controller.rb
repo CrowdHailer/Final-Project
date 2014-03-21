@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def edit_details
   	@user = current_user
     @saved = params[:saved]
+    flash.alert = "You must be logged in to edit profile" unless @user
     redirect_to root_path unless @user
   end
 
