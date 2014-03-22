@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-  	@user = User.find_by('verified_maker')
+  	@user = User.verified_makers.sample
   end
 
 end
