@@ -27,3 +27,10 @@ end
 Given(/^There is an uncofirmed maker$/) do
   user2 = User.create(name: 'TestName2', github_username: 'Test2', uid: '1234', provider: 'github')
 end
+
+Given(/^I have added the following:$/) do |details|
+  items = details.rows_hash
+  User.first.update_attributes(items)
+end
+
+
