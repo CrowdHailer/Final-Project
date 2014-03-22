@@ -4,8 +4,7 @@ OmniAuth.config.add_mock(:github, {
   :info => {
     :name => 'Mr Test',
     :email => 'test@example.com',
-    :nickname => "CrowdHailer",
-    :bio => "The life and times of a developer"
+    :nickname => "CrowdHailer"
   },
   :extra => {
   :raw_info => {
