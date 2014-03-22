@@ -25,3 +25,6 @@ Then(/^I should not see the unconfirmed maker$/) do
   expect(page).not_to have_content('TestName2')
 end
 
+Then(/^I should see "(.*?)" for the user$/) do |biotext|
+  expect(page).to have_content(biotext)
+end
