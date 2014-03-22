@@ -17,10 +17,10 @@
 #  cohort           :string(255)
 #  seeking_work     :datetime
 #  admin            :boolean          default(FALSE)
-#  text             :string(255)
 #  bio              :string(255)
+#  twitter          :string(255)
+#  linkedin         :string(255)
 #
-
 
 class User < ActiveRecord::Base
 
