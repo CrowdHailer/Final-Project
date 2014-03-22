@@ -7,7 +7,7 @@
             <%= link_to 'Sign out', signout_path, method: :delete, :class => "button github_button" %>
           </li>
         <% else %>
-          <li><a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= ENV['GITHUB_CLIENT_ID'] %>" class="button">Sign in with Github</a></li>
+          <li><a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= ENV['GITHUB_CLIENT_ID'] %>" class="button"><i class="fi-social-github"></i> Sign in with Github</a></li>
         <% end %>
       </ul>
     </div>

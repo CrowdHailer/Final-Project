@@ -10,9 +10,18 @@
     		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= user.cohort %></small></%></h1>
         <p><%= user.bio %></p>
         <ul>
-          <li><%= user.email %></li>
-          <li><%= user.twitter %></li>
-      		<li><%= user.linkedin %></li>
+          <li>
+            <i class="fi-mail"></i>
+            <%= user.email %>
+          </li>
+          <li>
+            <i class="fi-social-twitter"></i>
+            <%= user.twitter %>
+          </li>
+      		<li>
+            <i class="fi-social-linkedin"></i>
+            <%= user.linkedin %>
+          </li>
         </ul>
     	</div>
     </div>
