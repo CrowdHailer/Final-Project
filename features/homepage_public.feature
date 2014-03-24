@@ -1,7 +1,7 @@
 Feature: Home page content
 
   Background:
-  	Given there is a confirmed maker
+  	Given there is a confirmed maker seeking work
     Given I visit the "home" page
 
   Scenario: Public view
