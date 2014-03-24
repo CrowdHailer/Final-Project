@@ -15,7 +15,7 @@ Feature: List of all people content
 
   Scenario: Show only confirmed makers seeking work
     Then I should see "Show makers seeking work" button
-    @wip
+
   Scenario: Clicking the button
     When I click button "Show makers seeking work"
     Then I should see makers seeking work
