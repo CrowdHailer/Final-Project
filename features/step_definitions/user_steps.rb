@@ -33,4 +33,8 @@ Given(/^I have added the following:$/) do |details|
   User.first.update_attributes(items)
 end
 
+Given(/^I am seeking work$/) do
+  User.first.set_as_available
+end
+
 

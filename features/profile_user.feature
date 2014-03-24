@@ -8,10 +8,11 @@ Feature: Show one person's details
       | twitter  | @crowdhailer                      |
       | linkedin | linkedin.ch.com                   |
       | cohort   | January                           |
-      
+
   Scenario: Show a user
-  	When I visit the user profile page
-	  Then I should see the following:
+    Given I am seeking work
+    When I visit the user profile page
+    Then I should see the following:
       | Profile                           |
       | Mr Test                           |
       | test@example.com                  |
@@ -20,5 +21,8 @@ Feature: Show one person's details
       | @crowdhailer                      |
       | linkedin.ch.com                   |
       | January                           |
+      | I am seeking work                 |
 
-      
+  Scenario: When the maker is not seeking work
+    When I visit the user profile page
+    Then I should not see "I am seeking work"
