@@ -13,14 +13,37 @@
       <%= link_to image_tag(@user.profile_image, width: "300px"), show_details_path(@user.id) %>
     </div>
     <div class="large-5 columns" >
-      <h3><%= @user.name %>: a Maker's Graduate</h3>
+      <h3><%= @user.name %></h3>
       <p><%= @user.bio %>hello</p>
     </div>
   <% end %>
   <!-- <div class="large-3 columns" id="column_border"> -->
   <div class="large-4 columns"> 
     <h3>How we get to be one</h3>
-      <p>Full-stack training means that trainees learn both the clientacing and back-end elements of web development.</p>
+      <p>Full-stack training means that trainees learn both the client-facing and back-end elements of web development.</p> <p> 
+
+      <ul>
+        <li>Ruby including IRB usage, identifying 'code smells', refactoring techniques,
+        
+        <li>Ruby with Sinatra, Ruby on Rails including ActiveRecord
+        <li>Object Oriented Design and Programming
+        <li>Git (Git command-line and Github), Heroku 
+        <li>HTML, CSS, HAML, SASS, Foundation CSS, Twitter Bootstrap 
+        <li>Javascript, Ajax, JSON, Jquery,  Coffescript
+        
+        <li>HTTP
+        <li> Unix OS environment and commands 
+        <li>text editors including introductions to Vi and Vim, and full use of Sublime
+        <li>databases with emphasis on Postgresql
+        <li>Capybara, Cucumber, RSpec
+        <li>Model View Controller design, Test Driven Development
+        <li>Agile and lean techniques
+        
+        <li>security including BCrypt
+        <li>Amazon Web Services
+        <li>use of Codewars
+      </ul>
+       </p>
   </div>
 
   <div class="large-3 columns home_image home_button">
