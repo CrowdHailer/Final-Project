@@ -1,4 +1,5 @@
 <div class="row shadow">
+
   <div class="large-12 columns" role="content">
 		<%= 'You are not yet confirmed as a maker' unless @user.verified_maker %>
     <h3>Update <%= @user.name %> <small><%= @user.github_username %> </small></h3> 
@@ -11,6 +12,8 @@
         <%= @user.bio %>
       </div>
     </div>
+
+    <%= 'Updates saved' if @saved %>
 		<%= form_for(@user, url: { action: "update_details" }) do |f| %>
 			Email: <%= @user.email %><%= f.text_field :email %><br>
 			Cohort: <%= @user.cohort %><%= f.text_field :cohort %><br>
