@@ -1,28 +1,37 @@
 <div class="row shadow">
-    <div class="large-12 columns" role="content">
-      <article>
-        <h3>Profile<a href="#"></a> <%= @showcase_user.name %> </h3> 
-        <div class="row">
-          <div class="large-6 columns detail_image" >
-             <%= image_tag @showcase_user.profile_image, width:"400px"%>
-          </div>
-          <div class="large-6 columns">
-            <p>BIO</p>
-          </div>
+
+  <div class="large-12 columns" role="content">
+    <article>
+      <h3>Profile <%= @showcase_user.name %> </h3>
+      <div class="row">
+        <div class="large-6 columns detail_image" >
+          <%= image_tag @showcase_user.profile_image, width:"300px"%>
         </div>
-        <hr />
-        <article>
-        	<p>List of links, e.g. Github, edit profile, etc</p>
-        </article>
-        <hr />
-        <p>and its details</p>
+        <div class="large-6 columns">
+          <h4>BIO</h4>
+            <p><%= @showcase_user.bio %></p>
+            <ul>
+              <li><%= @showcase_user.email %></li>
+              <li><%= @showcase_user.github_username %></li>
+              <li>Cohort: <%= @showcase_user.cohort %></li>
+              <li><%= @showcase_user.twitter %></li>
+              <li><%= @showcase_user.linkedin %></li>
+            </ul>
+        </div>
+      </div>
+      <hr />
+      <article>
+      	<p>List of links, e.g. Github, edit profile, etc</p>
       </article>
-      
-      <% if current_user == @showcase_user %>
-        <%= link_to 'Edit', edit_path %>
-      <% end %>
-    </div>
+      <hr />
+      <p>and its details</p>
+    </article>
+
+    <% if current_user == @showcase_user %>
+      <%= link_to 'Edit', edit_path %>
+    <% end %>
+  </div>
 </div>
- 
- 
+
+
 

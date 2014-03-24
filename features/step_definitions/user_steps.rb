@@ -10,9 +10,13 @@ Given(/^I am confirmed$/) do
   User.first.confirm_maker
 end
 
+Given(/^I am granted admin privilages$/) do
+  User.first.make_admin
+end
+
 Given(/^I have been confirmed as a Maker$/) do
-  user = User.find_by_name('Mr Test')
-  user.confirm_maker
+  step "I sign in"
+  step "I am confirmed"
 end
 
 Given(/^there is a confirmed maker$/) do
@@ -23,3 +27,10 @@ end
 Given(/^There is an uncofirmed maker$/) do
   user2 = User.create(name: 'TestName2', github_username: 'Test2', uid: '1234', provider: 'github')
 end
+
+Given(/^I have added the following:$/) do |details|
+  items = details.rows_hash
+  User.first.update_attributes(items)
+end
+
+

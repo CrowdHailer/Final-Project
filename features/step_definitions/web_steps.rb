@@ -6,6 +6,10 @@ Given(/^I visit the "([^\"]+)" page$/) do |path_name|
     visit '/edit'
   when 'bogus user'
     visit '/user/bogus_jeff'
+  when 'admin'
+    visit '/admin'
+  when 'user list'
+    visit '/users'
   else
     puts 'Path not found'
   end

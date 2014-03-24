@@ -17,21 +17,9 @@
 #  cohort           :string(255)
 #  seeking_work     :datetime
 #  admin            :boolean          default(FALSE)
-#  text             :string(255)
 #  bio              :string(255)
-#
-
-#  name             :string(255)
-#  oauth_token      :string(255)
-#  oauth_expires_at :datetime
-#  created_at       :datetime
-#  updated_at       :datetime
-#  email            :string(255)
-#  verified_maker   :boolean          default(FALSE)
-#  github_username  :string(255)
-#  profile_image    :string(255)
-#  cohort           :string(255)
-#  seeking_work     :datetime
+#  twitter          :string(255)
+#  linkedin         :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -81,7 +69,4 @@ class User < ActiveRecord::Base
     Github.new(github_username)
   end
 
-  # def profile_image
-  #   "https://avatars1.githubusercontent.com/u/#{profile_image}"
-  # end
 end

@@ -3,7 +3,6 @@ require 'open-uri'
 class Github
   def initialize username
     @username = username
-     
   end
 
   attr_reader :username
@@ -46,7 +45,4 @@ class Github
     JSON.parse(raw_data, :symbolize_names => true)
   end
 
-  # def profile_image
-  #   "https://avatars1.githubusercontent.com/u/#{profile_image}"
-  # end
 end

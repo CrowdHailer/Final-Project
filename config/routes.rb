@@ -3,14 +3,16 @@ FinalProject::Application.routes.draw do
   root 'home#index'
 
   get '/auth/:provider/callback'  => 'sessions#create'
-  post '/signin'                  => 'sessions#new',        :as => :signin
-  delete '/signout'               => 'sessions#destroy',    :as => :signout
+  post '/signin'                  => 'sessions#new',         :as => :signin
+  delete '/signout'               => 'sessions#destroy',     :as => :signout
   get '/auth/failure'             => 'sessions#failure'
 
   get '/users'                    => 'users#show_all'       
-  get '/user/:id'                 => 'users#show_details',  :as => :show_details
-  get '/edit'                     => 'users#edit_details', :as => :edit
-  patch '/users'                  => 'users#update_details',:as => :update
+
+  get '/user/:github_username'    => 'users#show_details',   :as => :show_details
+  get '/edit'                     => 'users#edit_details',   :as => :edit
+  patch '/users'                  => 'users#update_details', :as => :update
+  get '/admin'                    => 'users#admin',          :as => :admin
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
