@@ -146,6 +146,16 @@ describe 'User' do
     expect(User.verified_makers).to eq([user1, user2])
   end
 
+  it "should know all the verified makers seeking for work" do
+    user1 = User.create(name: "First User",  github_username: 'Dave',   uid: 1, provider: "github")
+    user2 = User.create(name: "Second User", github_username: 'Gaston', uid: 2, provider: "github")
+    expect(User.verified_makers).to eq([])
+    user1.confirm_maker
+    user2.confirm_maker
+    user1.set_as_available
+    expect(User.makers_seeking_work).to eq([user1])
+  end
+
 end
 
 

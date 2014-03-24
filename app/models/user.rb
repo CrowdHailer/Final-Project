@@ -70,6 +70,10 @@ class User < ActiveRecord::Base
     User.where(verified_maker: true)
   end
 
+  def self.makers_seeking_work
+    User.all.select{ |user| user.seeking_work? }
+  end
+
   def github
     Github.new(github_username)
   end
