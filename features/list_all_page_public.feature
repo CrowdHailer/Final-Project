@@ -14,7 +14,7 @@ Feature: List of all people content
     And I should not see the unconfirmed maker
 
   Scenario: Show only confirmed makers seeking work
-    Then I should see "Show makers seeking work" button
+    Then I should see 'Show makers seeking work' button
 
   Scenario: Clicking the button
     When I click button "Show makers seeking work"

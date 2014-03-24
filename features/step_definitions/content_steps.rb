@@ -29,15 +29,15 @@ Then(/^I should see "(.*?)" for the user$/) do |biotext|
   expect(page).to have_content(biotext)
 end
 
-Then(/^I should see "(.*?)" button$/) do |button|
-  expect(page).to have_content(button)
-end
-
-Given(/^I click button "(.*?)"$/) do |button|
-  click_button button
+Then(/^I should see 'Show makers seeking work' button$/) do
+  expect(page).to have_selector('#myButton1')
 end
 
 Then(/^I should see makers seeking work$/) do
   expect(page).to have_selector('.available',   visible: true)
   expect(page).to have_selector('.unavailable', visible: false)
+end
+
+When(/^I click button "(.*?)"$/) do |arg1|
+  find_button('Show makers seeking work').click
 end
