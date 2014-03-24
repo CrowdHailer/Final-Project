@@ -57,6 +57,11 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def set_as_unavailable
+    self.seeking_work = nil
+    save!
+  end
+
   def seeking_work?
     (seeking_work || Time.new(1970)) > Time.now - 2.weeks
   end

@@ -52,7 +52,7 @@ describe 'User' do
         expect(empty_user.errors[attribute]).not_to be_empty
       end
     end
-    
+
   end
 
   context 'Authenticated github user' do
@@ -67,9 +67,9 @@ describe 'User' do
         expect(@user.send(attribute)).to eq(value)
       end
     end
-  
+
   end
-  
+
   context 'User privileges' do
 
     before(:each) do
@@ -118,11 +118,17 @@ describe 'User' do
       expect(@user).not_to be_seeking_work
     end
 
+    it "should be able to change the seeking work status before expire date" do
+      @user.set_as_available
+      @user.set_as_unavailable
+      expect(@user).not_to be_seeking_work
+    end
+
   end
 
   context 'Futher user details' do
     let(:user) { User.new(valid_details) }
-    
+
     extra_details.each do | attribute, value |
       it "should have a #{attribute}" do
         expect(user.send(attribute)).to eq(value)
