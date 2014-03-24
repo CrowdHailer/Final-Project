@@ -3,54 +3,55 @@
 
   <div class="large-12 columns" role="content">
     <article>
-      <p class="centre em"><strong>The showcase for graduates of <a href="tp://www.makersacademy.com/"> Makers Academy </strong></a>
+      <p class="centre em"><strong>The showcase for graduates of <a href="http://www.makersacademy.com/"> Makers Academy </strong></a>
       </p>
       <hr />
     </article>
   </div>
-  <% if @user %>
-    <div class="large-3 columns home_image">
-      <%= link_to image_tag(@user.profile_image, width: "300px"), show_details_path(@user.id) %>
-    </div>
-    <div class="large-5 columns" >
-      <h3><%= @user.name %></h3>
-      <p><%= @user.bio %>hello</p>
-    </div>
-  <% end %>
-  <!-- <div class="large-3 columns" id="column_border"> -->
-  <div class="large-4 columns"> 
-    <h3>How we get to be one</h3>
-      <p>Full-stack training means that trainees learn both the client-facing and back-end elements of web development.</p> <p> 
+  <div class="large-12 columns">
+    <div class="large-7 columns">
+    <% if @user %> 
+      <div class="user-image">  
+        <%= link_to image_tag(@user.profile_image, width: '70%', ), show_details_path(@user.github_username) %>
+      </div>
+        <h3><%= link_to @user.name, show_details_path(@user.github_username) %></h3>
+        <p><%= @user.bio %></p>
+    <% end %>
+  
+  </div>
 
-      <ul>
-        <li>Ruby including IRB usage, identifying 'code smells', refactoring techniques,
-        
-        <li>Ruby with Sinatra, Ruby on Rails including ActiveRecord
-        <li>Object Oriented Design and Programming
-        <li>Git (Git command-line and Github), Heroku 
-        <li>HTTP, HTML, CSS, HAML, SASS, Foundation CSS, Twitter Bootstrap 
-        <li>Javascript, Ajax, JSON, Jquery,  Coffescript
-        
-        <li>
-        <li>Unix OS environment and commands 
-        <li>text editors including introductions to Vi and Vim, and full use of Sublime
-        <li>databases with emphasis on Postgresql
-        <li>Capybara, Cucumber, RSpec
-        <li>Model View Controller design, Test Driven Development
-        <li>Agile and lean techniques
-        
-        <li>security including BCrypt
-        <li>Amazon Web Services
-        <li>Codewars &amp; Stackoverflow
-      </ul>
+  <!-- <div class="large-3 columns" id="column_border"> -->
+  <div class="large-5 columns"> 
+    <h3>How we get to be one</h3>
+      <p>Full-stack training means that trainees learn both the client-facing and back-end elements of web development.</p> 
+      <p> 
+        <ul>
+          <li>Ruby including IRB usage, identifying 'code smells', refactoring techniques</li>
+          
+          <li>Ruby with Sinatra, Ruby on Rails including ActiveRecord</li>
+          <li>Object Oriented Design and Programming</li>
+          <li>Git (Git command-line and Github), Heroku</li> 
+          <li>HTTP, HTML, CSS, HAML, SASS, Foundation CSS, Twitter Bootstrap </li>
+          <li>Javascript, Ajax, JSON, Jquery,  Coffescript</li>
+          <li>Unix OS environment and commands </li>
+          <li>text editors including introductions to Vi and Vim, and full use of Sublime</li>
+          <li>databases with emphasis on Postgresql</li>
+          <li>Capybara, Cucumber, RSpec</li>
+          <li>Model View Controller design, Test Driven Development</li>        
+          <li>security including BCrypt</li>
+          <li>Amazon Web Services</li>
+          <li>Codewars &amp; Stackoverflow</li>
+        </ul>
        </p>
   </div>
 
+  </div>
+<div class="large-12 columns" role="content">
   <div class="large-3 columns home_image home_button">
-    <a class='button' href='/users'>List all</a>
+    <a class='button' href='/users'>List All Makers</a>
   </div>
 </div>
- 
+</div> 
       <!-- <div class="large-12 columns" > -->
        <!-- <h5>Look for makers</h5> -->
           <!-- <ul > -->

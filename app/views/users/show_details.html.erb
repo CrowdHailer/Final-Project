@@ -24,10 +24,9 @@
       </div>
       <hr />
       <article>
-      	<p>List of links, e.g. Github, edit profile, etc</p>
+      	<div id="cv-service-container"></div>
       </article>
       <hr />
-     <%= content_tag(:iframe, nil, src:"http://gitcv.herokuapp.com/#{@showcase_user.github_username}.html") %>
     </article>
 
     <% if current_user == @showcase_user %>
@@ -35,6 +34,3 @@
     <% end %>
   </div>
 </div>
-
-
-

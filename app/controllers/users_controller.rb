@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show_details
   	@showcase_user = User.find_by_github_username(params['github_username'])
     @user = current_user
+    gon.github_username = @showcase_user.github_username if @showcase_user
     redirect_to root_path, alert: 'User profile not found' unless @showcase_user
   end
 
