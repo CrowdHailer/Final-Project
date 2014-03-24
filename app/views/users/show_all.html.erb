@@ -1,14 +1,15 @@
 <div class="row shadow">
   <h1>All Makers, graduates and current students</h1>
-
+  <button onclick="$('.unavailable').slideUp()">Show makers seeking work</button>
   <hr/>
   <% @users.each do |user| %>
-    <div class="large-12 columns" >
-    	<div class="large-3 columns" >
+    <% available = user.seeking_work? ? 'available' : 'unavailable' %>
+    <div class="large-12 columns <%=available%>" >
+    	<div class="large-3 columns " >
         <%= link_to image_tag(user.profile_image), show_details_path(user.id) %>
       </div>
       <div class="large-9 columns" >
-    		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= user.cohort %></small></%></h1>
+    		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= user.cohort %></small></h1>
         <p><%= user.bio %></p>
         <ul>
           <li><%= user.email %></li>

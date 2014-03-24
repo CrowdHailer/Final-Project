@@ -17,12 +17,16 @@
               <li><%= @showcase_user.twitter %></li>
               <li><%= @showcase_user.linkedin %></li>
             </ul>
+            <% if @showcase_user.seeking_work? %>
+                <p>I am seeking work </p>
+            <% end %>
         </div>
       </div>
       <hr />
-        <article>
-      	 <p>CV </p>
-        </article> 
+      <article>
+      	<div id="cv-service-container"></div>
+      </article>
+      <hr />
     </article>
 
     <% if current_user == @showcase_user %>
@@ -30,6 +34,3 @@
     <% end %>
   </div>
 </div>
-
-
-
