@@ -11,8 +11,8 @@ body {
 -webkit-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.75);
  -moz-box-shadow:    2px 2px 4px 0px rgba(50, 50, 50, 0.75);
  box-shadow:         2px 2px 4px 0px rgba(50, 50, 50, 0.75);
- margin-top: 15px;
- margin-bottom: 15px;
+ margin-top: 20px;
+ margin-bottom: 20px;
 }
 
 h1 {
@@ -40,4 +40,15 @@ h1 {
   background: red;
   -webkit-transition: all 10s ease-in-out;
 
+}
+
+.centre {
+	margin-top: 1.2em;
+	text-align: center;
+}
+
+.em {
+	font-style: normal;
+	font-size: 1.3em;
+	font-weight: bold;
 }
