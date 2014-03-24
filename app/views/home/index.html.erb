@@ -8,20 +8,23 @@
       <hr />
     </article>
   </div>
-   <% if @user %>
-  <div class="large-3 columns home_image">
-      <%= image_tag( @user.profile_image, width: "300px") %>
-  <a class='button' href='/users'>List all</a>
-  </div>
-  <div class="large-5 columns" >
-    <h3><%= @user.name %>: a Maker's Graduate</h3>
+  <% if @user %>
+    <div class="large-3 columns home_image">
+      <%= link_to image_tag(@user.profile_image, width: "300px"), show_details_path(@user.id) %>
+    </div>
+    <div class="large-5 columns" >
+      <h3><%= @user.name %>: a Maker's Graduate</h3>
       <p><%= @user.bio %>hello</p>
-  </div>
-    <% end %>
+    </div>
+  <% end %>
   <!-- <div class="large-3 columns" id="column_border"> -->
   <div class="large-4 columns"> 
     <h3>How we get to be one</h3>
       <p>Full-stack training means that trainees learn both the clientacing and back-end elements of web development.</p>
+  </div>
+
+  <div class="large-3 columns home_image home_button">
+    <a class='button' href='/users'>List all</a>
   </div>
 </div>
  
