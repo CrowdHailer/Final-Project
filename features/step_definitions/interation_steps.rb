@@ -11,3 +11,7 @@ Then(/^I fill in the following for the "([^\"]+)"$/) do |object, table|
     fill_in "#{object}_#{name}", with: value
   end
 end
+
+Given(/^I choose "(.*?)" from "(.*?)"$/) do |option, select_box|
+  select(option, :from => select_box)
+end
