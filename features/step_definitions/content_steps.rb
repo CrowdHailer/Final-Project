@@ -41,3 +41,7 @@ end
 When(/^I click button "(.*?)"$/) do |arg1|
   find_button('Show makers seeking work').click
 end
+
+Then(/^I should see unconfirmed maker$/) do
+  expect(page).to have_content('TestName2')
+end

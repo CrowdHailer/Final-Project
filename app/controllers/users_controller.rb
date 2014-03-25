@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show_all
-  	@users = User.verified_makers
+    @users = (current_user && current_user.admin?) ? User.all : User.verified_makers
   end
 
   def show_details
