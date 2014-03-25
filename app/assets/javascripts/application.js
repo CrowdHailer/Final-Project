@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(function(){ $(document).foundation(); });
 
 function change(){
@@ -28,6 +29,7 @@ function change(){
       $('.unavailable').slideDown();
     }
 };
+
 
 
 
