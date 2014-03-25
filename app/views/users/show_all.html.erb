@@ -1,6 +1,6 @@
 <div class="row shadow">
   <h1>All Makers, graduates and current students</h1>
-  <button onclick="$('.unavailable').slideUp()">Show makers seeking work</button>
+  <input id="myButton1" class='button' onclick="javascript:change()" type='button' value="Show makers seeking work"></input>
   <hr/>
   <% @users.each do |user| %>
     <% available = user.seeking_work? ? 'available' : 'unavailable' %>
