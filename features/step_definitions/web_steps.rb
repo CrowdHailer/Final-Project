@@ -19,3 +19,7 @@ When(/^I visit the user profile page$/) do
   visit "/user/#{User.first.github_username}"
   expect(page).to have_content('Profile')
 end
+
+When(/^I visit an unconfirmed maker's profile page$/) do
+  visit "/user/Test2"
+end
