@@ -26,13 +26,12 @@ Feature: Edit the signed-in person's details
 	Scenario: Edit my details
 	  Given I fill in the following for the "user"
 	     | email         |  new.email@test.com |
-	     | cohort        |  Jan15              |
        | profile_image |  joke.jpg           |
        | twitter       |   @youraccount      |
        | linkedin      |   yourcount.com     |
        | stackoverflow |   colinStack        |
        | bio           |   I am a maker      |
-
+    And I choose "May 2014" from "user_cohort"
     And I press "Save"
     Then I should see "Updates saved"
     And I should see "I am a maker" for the user
