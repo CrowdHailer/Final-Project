@@ -1,0 +1,7 @@
+<ul class="no-bullet medium-offset-2 medium-10">
+  <li><%= content_tag(:i, nil, class: 'fi-mail') + @showcase_user.email if @showcase_user.email %></li>
+  <li><%= content_tag(:i, nil, class: 'fi-social-github') + @showcase_user.github_username if @showcase_user.github_username %></li>
+  <li><%= content_tag(:i, nil, class: 'fi-social-twitter') + @showcase_user.twitter if @showcase_user.twitter %></li>
+  <li><%= content_tag(:i, nil, class: 'fi-social-linkedin') + @showcase_user.linkedin if @showcase_user.linkedin %></li>
+  <li><%= content_tag(:i, nil, class: 'fi-social-stack-overflow') + @showcase_user.stackoverflow if @showcase_user.stackoverflow %></li>
+</ul>

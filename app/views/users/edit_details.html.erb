@@ -18,21 +18,21 @@
 			Email: <%= @user.email %><%= f.text_field :email %><br>
 			
       Cohort: <%= @user.cohort %><%= 
-      f.select :cohort, [['November 2013'],
-                         ['January 2014'], ['March 2014'],
+      f.select :cohort, [['November 2013'],['January 2014'], 
+                         ['February 2014'], ['March 2014'],
                          ['May 2014'],     ['June 2014'],
                          ['August 2014'],  ['September 2014'],
                          ['October 2014'], ['December 2014'],
                          ['February 2015'],
                          ['none']] %>
-			Profile image: <%= f.text_field :profile_image %><br>
+      Bio: <%= f.text_area  :bio, :maxlength=>"250", :rows=>"6"  %><br>
+      Profile image: <%= f.text_field :profile_image %><br>
       Twitter: <%= @user.twitter %><%= f.text_field :twitter %><br>
       Linkedin: <%= @user.linkedin %><%= f.text_field :linkedin %><br>
       Stackoverflow: <%= @user.stackoverflow %><%= f.text_field :stackoverflow %><br>      
-      Bio: <%= f.text_area  :bio, :maxlength=>"250", :rows=>"6"  %><br>
+      Website: <%= @user.website %><%= f.text_field :website %><br>      
+      Blog: <%= @user.blog %><%= f.text_field :blog %><br>      
       <%= f.submit 'Save', :class => 'button  submit' %>
-			
 		<% end %>
-
   </div>
 </div>

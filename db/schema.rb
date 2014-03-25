@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322155042) do
+ActiveRecord::Schema.define(version: 20140325144204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "githubs", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", force: true do |t|
     t.string   "provider"
@@ -36,11 +31,12 @@ ActiveRecord::Schema.define(version: 20140322155042) do
     t.string   "cohort"
     t.datetime "seeking_work"
     t.boolean  "admin",            default: false
-    t.string   "text"
     t.string   "bio"
     t.string   "twitter"
     t.string   "linkedin"
     t.string   "stackoverflow"
+    t.string   "blog"
+    t.string   "website"
   end
 
 end

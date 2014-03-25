@@ -2,27 +2,26 @@
 
   <div class="large-12 columns" role="content">
     <article>
-      <h3><%= @showcase_user.name %> </h3>
+      
       <div class="row">
         <div class="medium-4 columns detail_image" >
           <%= image_tag @showcase_user.profile_image, width:"300px"%>
         </div>
         <div class="medium-7 medium-offset-1 columns">
-            <p><%= @showcase_user.bio %></p>
-            <ul class="no-bullet medium-offset-2 medium-10">
-              <li><%= content_tag(:i, nil, class: 'fi-torsos-all') + @showcase_user.cohort if @showcase_user.cohort %></li>
-              <li><%= content_tag(:i, nil, class: 'fi-mail') + @showcase_user.email if @showcase_user.email %></li>
-              <li><%= content_tag(:i, nil, class: 'fi-social-github') + @showcase_user.github_username if @showcase_user.github_username %></li>
-              <li><%= content_tag(:i, nil, class: 'fi-social-twitter') + @showcase_user.twitter if @showcase_user.twitter %></li>
-              <li><%= content_tag(:i, nil, class: 'fi-social-linkedin') + @showcase_user.linkedin if @showcase_user.linkedin %></li>
-              <li><%= content_tag(:i, nil, class: 'fi-social-stack-overflow') + @showcase_user.stackoverflow if @showcase_user.stackoverflow %></li>
-            </ul>
-            <% if @showcase_user.seeking_work? %>
-                <p>I am seeking work </p>
-            <% end %>
-            <% if current_user == @showcase_user %>
-              <%= link_to 'Edit', edit_path, :class => "button" %>
-            <% end %>
+          <h1><%= @showcase_user.name %>
+            <small>
+              <%= content_tag(:i, nil, class: 'fi-torsos-all') + @showcase_user.cohort if @showcase_user.cohort %>
+            </small>
+          </h1>
+          <p><%= @showcase_user.bio %></p>
+          <%= render 'layouts/details' %>
+          <% if @showcase_user.seeking_work? %>
+              <p>I am seeking work </p>
+          <% end %>
+          <%= link_to 'Back To Users', users_path, :class => "button" %>
+          <% if current_user == @showcase_user %>
+            <%= link_to 'Edit', edit_path, :class => "button" %>
+          <% end %>
         </div>
             <% if @user.admin? && !@showcase_user.verified_maker? %>
               <%= link_to "Confirm maker", confirm_path(@showcase_user.github_username), :class => "button" %>
@@ -32,7 +31,6 @@
       <article>
       	<div id="cv-service-container"></div>
       </article>
-      <hr />
     </article>
   </div>
 </div>
