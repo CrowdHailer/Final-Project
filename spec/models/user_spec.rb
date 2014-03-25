@@ -38,7 +38,9 @@ describe 'User' do
     cohort: 'Jan14',
     bio: 'Man I SOOOOO love coding, tis dope',
     twitter: '@twitterperson',
-    linkedin: 'testperson.com'
+    linkedin: 'testperson.com',
+    website: 'mine.com',
+    blog: 'alright.co.uk'
   }
   valid_details = auth_details.merge(extra_details)
 
