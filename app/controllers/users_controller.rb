@@ -27,6 +27,12 @@ class UsersController < ApplicationController
     redirect_to root_path, alert: 'You must have admin privilages to view admin' unless (@user && @user.admin)
   end
 
+  def confirm
+    @user_to_be_confirmed = User.find_by_github_username(params[:username])
+    @user_to_be_confirmed.confirm_maker if current_user && current_user.admin?
+    redirect_to '/users', notice: "#{@user_to_be_confirmed.github_username} is now a verified maker!"
+  end
+
   private
 
   def user_params

@@ -24,8 +24,11 @@
               <%= link_to 'Edit', edit_path, :class => "button" %>
             <% end %>
         </div>
+            <% if @user.admin? && !@showcase_user.verified_maker? %>
+              <%= link_to "Confirm maker", confirm_path(@showcase_user.github_username), :class => "button" %>
+            <% end %>
       </div>
-      
+
       <article>
       	<div id="cv-service-container"></div>
       </article>
