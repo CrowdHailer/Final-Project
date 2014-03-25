@@ -21,7 +21,7 @@
       Twitter: <%= @user.twitter %><%= f.text_field :twitter %><br>
       Linkedin: <%= @user.linkedin %><%= f.text_field :linkedin %><br>
       Stackoverflow: <%= @user.stackoverflow %><%= f.text_field :stackoverflow %><br>      
-      Bio: <%= f.text_area :bio, :maxlength=>"250"  %><br>
+      Bio: <%= f.text_area  :bio, :maxlength=>"250", :rows=>"6"  %><br>
       <%= f.submit 'Save', :class => 'button  submit' %>
 			
 		<% end %>
