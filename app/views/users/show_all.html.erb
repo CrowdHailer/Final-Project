@@ -11,14 +11,7 @@
       <div class="large-9 columns" >
     		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= user.cohort %></small></h1>
         <p><%= user.bio %></p>
-        <ul class="no-bullet">
-          <% mail_i =  content_tag(:i, nil, class: 'fi-mail') %>
-          <% twitter_i =  content_tag(:i, nil, class: 'fi-social-twitter') %>
-          <% linkedin_i =  content_tag(:i, nil, class: 'fi-social-linkedin') %>
-          <%= content_tag(:li, (mail_i + ' ' + user.email)) if user.email %>
-          <%= content_tag(:li, (twitter_i + ' ' + user.twitter)) if user.twitter %>
-          <%= content_tag(:li, (linkedin_i + ' ' + user.linkedin)) if user.linkedin%>
-        </ul>
+        <%= render 'layouts/details' %>
     	</div>
     </div>
     <hr/>
