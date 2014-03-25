@@ -4,12 +4,12 @@
     <article>
       <h3>Profile <%= @showcase_user.name %> </h3>
       <div class="row">
-        <div class="large-6 columns detail_image" >
+        <div class="medium-4 columns detail_image" >
           <%= image_tag @showcase_user.profile_image, width:"300px"%>
         </div>
-        <div class="large-6 columns">
+        <div class="medium-7 medium-offset-1 columns">
             <p><%= @showcase_user.bio %></p>
-            <ul class="no-bullet">
+            <ul class="no-bullet medium-offset-2 medium-10">
               <li><%= content_tag(:i, nil, class: 'fi-torsos-all') + @showcase_user.cohort %></li>
               <li><%= content_tag(:i, nil, class: 'fi-mail') + @showcase_user.email %></li>
               <li><%= content_tag(:i, nil, class: 'fi-social-github') + @showcase_user.github_username %></li>
