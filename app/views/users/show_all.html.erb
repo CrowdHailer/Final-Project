@@ -1,26 +1,21 @@
 <div class="row shadow">
   <h1>All Makers, graduates and current students</h1>
   <input id="myButton1" class='button' onclick="javascript:change()" type='button' value="Show makers seeking work"></input>
-  <hr/>
   <% @users.each do |user| %>
     <% available = user.seeking_work? ? 'available' : 'unavailable' %>
     <div class="large-12 columns <%=available%>" >
-    	<div class="large-3 columns " >
+    	<hr/>
+      <div class="large-3 columns " >
         <%= link_to image_tag(user.profile_image), show_details_path(user.id) %>
       </div>
       <div class="large-9 columns" >
-    		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= user.cohort %></small></h1>
+    		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= content_tag(:i, nil, class: 'fi-torsos-all') + user.cohort %></small></h1>
         <p><%= user.bio %></p>
-        <ul class="no-bullet">
-          <% mail_i =  content_tag(:i, nil, class: 'fi-mail') %>
-          <% twitter_i =  content_tag(:i, nil, class: 'fi-social-twitter') %>
-          <% linkedin_i =  content_tag(:i, nil, class: 'fi-social-linkedin') %>
-          <%= content_tag(:li, (mail_i + ' ' + user.email)) if user.email %>
-          <%= content_tag(:li, (twitter_i + ' ' + user.twitter)) if user.twitter %>
-          <%= content_tag(:li, (linkedin_i + ' ' + user.linkedin)) if user.linkedin%>
-        </ul>
+        <% @showcase_user = user %>
+        <%= render 'layouts/details' %>
     	</div>
+
     </div>
-    <hr/>
+    
   <% end %>
 </div>
