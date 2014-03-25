@@ -4,6 +4,9 @@
       <ul class="button-group">
         <% if current_user %>
           <li>
+            <%= link_to 'My Profile', show_details_path(current_user.github_username), :class => "button" %>  
+          </li>
+          <li>
             <%= link_to 'Sign out', signout_path, method: :delete, :class => "button github_button" %>
           </li>
         <% else %>
