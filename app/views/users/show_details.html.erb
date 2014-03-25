@@ -20,6 +20,9 @@
             <% if @showcase_user.seeking_work? %>
                 <p>I am seeking work </p>
             <% end %>
+            <% if current_user == @showcase_user %>
+              <%= link_to 'Edit', edit_path, :class => "button" %>
+            <% end %>
         </div>
       </div>
       
@@ -28,9 +31,5 @@
       </article>
       <hr />
     </article>
-
-    <% if current_user == @showcase_user %>
-      <%= link_to 'Edit', edit_path %>
-    <% end %>
   </div>
 </div>
