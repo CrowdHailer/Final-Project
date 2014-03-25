@@ -8,14 +8,15 @@
           <%= image_tag @showcase_user.profile_image, width:"300px"%>
         </div>
         <div class="medium-7 medium-offset-1 columns">
-            <p><%= @showcase_user.bio %></p>
-            <%= render 'layouts/details' %>
-            <% if @showcase_user.seeking_work? %>
-                <p>I am seeking work </p>
-            <% end %>
-            <% if current_user == @showcase_user %>
-              <%= link_to 'Edit', edit_path, :class => "button" %>
-            <% end %>
+          <p><%= @showcase_user.bio %></p>
+          <%= render 'layouts/details' %>
+          <% if @showcase_user.seeking_work? %>
+              <p>I am seeking work </p>
+          <% end %>
+          <%= link_to 'Back To Users', users_path, :class => "button" %>
+          <% if current_user == @showcase_user %>
+            <%= link_to 'Edit', edit_path, :class => "button" %>
+          <% end %>
         </div>
       </div>
       
