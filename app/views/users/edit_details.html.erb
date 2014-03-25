@@ -16,7 +16,15 @@
     <%= 'Updates saved' if @saved %>
 		<%= form_for(@user, url: { action: "update_details" }) do |f| %>
 			Email: <%= @user.email %><%= f.text_field :email %><br>
-			Cohort: <%= @user.cohort %><%= f.text_field :cohort %><br>
+			
+      Cohort: <%= @user.cohort %><%= 
+      f.select :cohort, [['November 2013'],
+                         ['January 2014'], ['March 2014'],
+                         ['May 2014'],     ['June 2014'],
+                         ['August 2014'],  ['September 2014'],
+                         ['October 2014'], ['December 2014'],
+                         ['February 2015'],
+                         ['none']] %>
 			Profile image: <%= f.text_field :profile_image %><br>
       Twitter: <%= @user.twitter %><%= f.text_field :twitter %><br>
       Linkedin: <%= @user.linkedin %><%= f.text_field :linkedin %><br>
