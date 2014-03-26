@@ -10,6 +10,9 @@
       </div>
       <div class="large-9 columns" >
     		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= content_tag(:i, nil, class: 'fi-torsos-all') + user.cohort %></small></h1>
+        <% if user.seeking_work?  %>
+        <p id="available_work">Avaible</p>
+        <% end  %>
         <p><%= user.bio %></p>
         <% @showcase_user = user %>
         <%= render 'layouts/details' %>

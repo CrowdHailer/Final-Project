@@ -9,3 +9,9 @@ Feature: Admin content available to admin users
     When I visit the "user list" page
     Then I should see the confirmed maker
     And I should see unconfirmed maker
+
+  Scenario: Confirm maker
+  	When I visit an unconfirmed maker's profile page
+  	Then I should see button "Confirm maker"
+  	Then I click link "Confirm maker"
+  	And I should see unconfirmed maker is now a verified maker!

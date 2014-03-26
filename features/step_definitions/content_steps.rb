@@ -38,10 +38,22 @@ Then(/^I should see makers seeking work$/) do
   expect(page).to have_selector('.unavailable', visible: false)
 end
 
-When(/^I click button "(.*?)"$/) do |arg1|
-  find_button('Show makers seeking work').click
+When(/^I click button "(.*?)"$/) do |button|
+  find_button(button).click
 end
 
 Then(/^I should see unconfirmed maker$/) do
   expect(page).to have_content('TestName2')
+end
+
+Then(/^I should see button "(.*?)"$/) do |button|
+  expect(page).to have_content(button)
+end
+
+Then(/^I click link "(.*?)"$/) do |button|
+  click_link button
+end
+
+Then(/^I should see unconfirmed maker is now a verified maker!$/) do
+  expect(page).to have_content('Test2 is now a verified maker!')
 end
