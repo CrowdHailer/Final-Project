@@ -1,39 +1,46 @@
 <div class="row shadow">
-  <!-- Main Blog Content -->
-
-  <div class="large-12 columns" role="content">
+  <div class="medium-12 columns" role="content">
     <article>
-      <p class="centre em"><strong>The showcase for graduates of <a href="http://www.makersacademy.com/"> Makers Academy </strong></a>
+      <p class="centre em"><strong>The showcase for graduates of <a target="_blank" href="http://www.makersacademy.com/"> Makers Academy</strong></a> 
+        
       </p>
       <hr />
     </article>
   </div>
+
   <div class="large-12 columns">
     <div class="large-7 columns">
     <% if @user %> 
+      <div>
+        <h3><%= link_to @user.name, show_details_path(@user.github_username) %> 
+          <small style="text-align:right;"> is just one example, you can get a <a style="text-align:right;font-size: 20px;" href='/users'>full list.</a></small></h3>
+          <!-- <a style="float:right;" class='button' href='/users'>List All Makers</a> -->
+      </div>
+
+
       <div class="user-image">  
+
         <%= link_to image_tag(@user.profile_image, width: '70%', ), show_details_path(@user.github_username) %>
       </div>
-        <h3><%= link_to @user.name, show_details_path(@user.github_username) %></h3>
+
         <p><%= @user.bio %></p>
         <hr />
         <p>If you are a prospective employer or for any other reason you want to
           contact anyone you see here, please email  <a href="mailto:ruben@makersacademy.com">Ruben Kostucki</a>
-      
-
         </p>
+        <a class='button' href='/users'>Full list</a>
+
     <% end %>
-  
   </div>
 
-  <!-- <div class="large-3 columns" id="column_border"> -->
   <div class="large-5 columns"> 
-    <h3>Technologies</h3>
+    <h3>Technologies</h3><p><em>Full-stack</em> training means learning both the client-facing and back-end elements of web development. </p>
+
       <ul class="no-bullet">
         <li><%= content_tag(:i, nil, class: 'icon-ruby') %>Ruby</li>
-        <li><%= content_tag(:i, nil, class: 'icon-ruby-on-rails') %>Ruby on Rails</li>
+        <li><%= content_tag(:i, nil, class: 'icon-ruby-on-rails') %>Ruby  with both Sinatra and Rails</li>
         <li><%= content_tag(:i, nil, class: 'icon-google-developers') %>Object Oriented Programming</li>
-        <li><%= content_tag(:i, nil, class: 'icon-heroku') %>Git & Heroku</li> 
+        <li><%= content_tag(:i, nil, class: 'icon-heroku') %>Git & Heroku</li>
         <li><%= content_tag(:i, nil, class: 'icon-html') %>HTTP, HTML & CSS</li>
         <li><%= content_tag(:i, nil, class: 'icon-javascript') %>JavaScript, Ajax & Jquery</li>
         <li><%= content_tag(:i, nil, class: 'icon-css') %>Haml, SASS & CoffeeScript</li>
@@ -41,29 +48,12 @@
         <li><%= content_tag(:i, nil, class: 'icon-shell') %>Text editors</li>
         <li><%= content_tag(:i, nil, class: 'icon-postgres') %>Postgresql</li>
         <li><%= content_tag(:i, nil, class: 'icon-microscope') %>Capybara, Cucumber & RSpec</li>
-        <li><%= content_tag(:i, nil, class: 'icon-line-graph') %>Test Driven Development</li>        
+        <li><%= content_tag(:i, nil, class: 'icon-line-graph') %>Test Driven Development</li>
         <li><%= content_tag(:i, nil, class: 'icon-database') %>BCrypt</li>
         <li><%= content_tag(:i, nil, class: 'icon-aws') %>Amazon Web Services</li>
       </ul>
-
   </div>
 
+
   </div>
-<div class="large-12 columns" role="content">
-  <div class="large-3 columns home_image home_button">
-    <a class='button' href='/users'>List All Makers</a>
-  </div>
-</div>
 </div> 
-      <!-- <div class="large-12 columns" > -->
-       <!-- <h5>Look for makers</h5> -->
-          <!-- <ul > -->
-            <!-- <li><a href="#">Graduates looking for jobs</a></li> -->
-          <!-- </ul> -->
-      <!-- </div> -->
-
-
-    <!-- End Sidebar -->
-
-
-

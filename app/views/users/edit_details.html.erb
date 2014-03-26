@@ -1,13 +1,12 @@
 <div class="row shadow">
-
-  <div class="large-12 columns" role="content">
+  <div class="medium-12 columns" role="content">
 		<%= 'You are not yet confirmed as a maker' unless @user.verified_maker %>
-    <h3>Update <%= @user.name %> <small><%= @user.github_username %> </small></h3> 
+    <h3>Update <%= @user.name %> <small><%= @user.github_username %> </small></h3>
     <div class="row">
-      <div class="large-6 columns">
+      <div class="medium-6 columns">
         <%= image_tag @user.profile_image %>
       </div>
-      <div class="large-6 columns">
+      <div class="medium-6 columns">
         <p>BIO</p>
         <%= @user.bio %>
       </div>
@@ -18,9 +17,9 @@
     <%= 'Updates saved' if @saved %>
 		<%= form_for(@user, url: { action: "update_details" }) do |f| %>
 			Email: <%= @user.email %><%= f.text_field :email %><br>
-			
-      Cohort: <%= @user.cohort %><%= 
-      f.select :cohort, [['November 2013'],['January 2014'], 
+
+      Cohort: <%= @user.cohort %><%=
+      f.select :cohort, [['November 2013'],['January 2014'],
                          ['February 2014'], ['March 2014'],
                          ['May 2014'],     ['June 2014'],
                          ['August 2014'],  ['September 2014'],
@@ -31,9 +30,9 @@
       Profile image: <%= f.text_field :profile_image %><br>
       Twitter: <%= @user.twitter %><%= f.text_field :twitter %><br>
       Linkedin: <%= @user.linkedin %><%= f.text_field :linkedin %><br>
-      Stackoverflow: <%= @user.stackoverflow %><%= f.text_field :stackoverflow %><br>      
-      Website: <%= @user.website %><%= f.text_field :website %><br>      
-      Blog: <%= @user.blog %><%= f.text_field :blog %><br>      
+      Stackoverflow: <%= @user.stackoverflow %><%= f.text_field :stackoverflow %><br>
+      Website: <%= @user.website %><%= f.text_field :website %><br>
+      Blog: <%= @user.blog %><%= f.text_field :blog %><br>
       <%= f.submit 'Save', :class => 'button  submit' %>
 		<% end %>
   </div>

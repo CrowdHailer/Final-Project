@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show_all
     @users = (current_user && current_user.admin?) ? User.all : User.verified_makers
+    @users.shuffle!
   end
 
   def show_details
