@@ -8,7 +8,7 @@ FinalProject::Application.routes.draw do
   get '/auth/failure'             => 'sessions#failure'
 
   get '/users'                    => 'users#show_all'
-
+  get '/available'                => 'users#set_available',  :as => :set_available               
   get '/user/:github_username'    => 'users#show_details',   :as => :show_details
   get '/edit'                     => 'users#edit_details',   :as => :edit
   patch '/users'                  => 'users#update_details', :as => :update
