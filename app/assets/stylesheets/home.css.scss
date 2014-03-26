@@ -8,17 +8,16 @@ body {
 }
 
 .shadow {
--webkit-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.75);
- -moz-box-shadow:    2px 2px 4px 0px rgba(50, 50, 50, 0.75);
- box-shadow:         2px 2px 4px 0px rgba(50, 50, 50, 0.75);
- margin-top: 20px;
- margin-bottom: 20px;
+  -webkit-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.75);
+     -moz-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.75);
+          box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.75);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 h1 {
 	font-size: 2em;
 	text-align:left;
-
 }
 
 .button{
@@ -38,7 +37,6 @@ h1 {
 .alert {
   background: red;
   -webkit-transition: all 10s ease-in-out;
-
 }
 
 .centre {
@@ -73,5 +71,10 @@ footer {
 	color: green;
 	position: relative;
 	top: 1em;
+}
 
+.inline-list {
+	float: right;
+	margin-top: 1.0625rem;
+	margin-right: 1.1rem;
 }
