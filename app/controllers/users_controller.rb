@@ -33,6 +33,15 @@ class UsersController < ApplicationController
     redirect_to '/users', notice: "#{@user_to_be_confirmed.github_username} is now a verified maker!"
   end
 
+  def set_available
+    # @user_to_be_available = User.find_by_github_username(params[:username])
+    if current_user.seeking_work?
+      current_user.set_as_unavailable
+    else
+      current_user.set_as_available
+    end
+    redirect_to '/edit', notice: 'WOrk status wordies'
+  end
   private
 
   def user_params
