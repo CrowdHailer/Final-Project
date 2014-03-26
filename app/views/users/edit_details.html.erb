@@ -12,6 +12,7 @@
         <%= @user.bio %>
       </div>
       <input value='Seeking Work' class="button available_button" ></input>
+      <% @user.set_as_available %>
     </div>
     <p> &nbsp; </p>
     <%= 'Updates saved' if @saved %>
@@ -26,7 +27,7 @@
                          ['October 2014'], ['December 2014'],
                          ['February 2015'],
                          ['none']] %>
-      Bio: <%= f.text_area  :bio, :maxlength=>"250", :rows=>"6"  %><br>
+      Bio: <%= f.text_area  :bio, :maxlength=>"250", :rows=>"6"%><br>
       Profile image: <%= f.text_field :profile_image %><br>
       Twitter: <%= @user.twitter %><%= f.text_field :twitter %><br>
       Linkedin: <%= @user.linkedin %><%= f.text_field :linkedin %><br>
