@@ -4,4 +4,6 @@
   <li><%= content_tag(:i, nil, class: 'fi-social-twitter') + @showcase_user.twitter if @showcase_user.twitter %></li>
   <li><%= content_tag(:i, nil, class: 'fi-social-linkedin') + @showcase_user.linkedin if @showcase_user.linkedin %></li>
   <li><%= content_tag(:i, nil, class: 'fi-social-stack-overflow') + @showcase_user.stackoverflow if @showcase_user.stackoverflow %></li>
+  <li><%= content_tag(:i, nil, class: 'fi-web') + @showcase_user.website if @showcase_user.website %></li>
+  <li><%= content_tag(:i, nil, class: 'fi-quote') + @showcase_user.blog if @showcase_user.blog %></li>
 </ul>
