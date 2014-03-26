@@ -1,24 +1,24 @@
 <div class="row shadow">
-  <h1>All Makers, graduates and current students</h1>
+  <div class="medium-12 columns ">
+    <h1>All Makers, graduates and current students</h1>
+  </div>
   <input id="myButton1" class='button' onclick="javascript:change()" type='button' value="Show makers seeking work"></input>
   <% @users.each do |user| %>
     <% available = user.seeking_work? ? 'available' : 'unavailable' %>
-    <div class="large-12 columns <%=available%>" >
+    <div class="medium-12 columns <%=available%>" >
     	<hr/>
-      <div class="large-3 columns " >
+      <div class="medium-3 columns " >
         <%= link_to image_tag(user.profile_image), show_details_path(user.github_username) %>
       </div>
-      <div class="large-9 columns" >
-    		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= content_tag(:i, nil, class: 'fi-torsos-all') + user.cohort %></small></h1>
-        <% if user.seeking_work?  %>
-        <p id="available_work">Avaible</p>
-        <% end  %>
+      <div class="medium-9 columns" >
+    		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= content_tag(:i, nil, class: 'fi-torsos-all') + user.cohort %>
+          <%= content_tag(:span, 'Available', id: 'available_work', class: 'right') if user.seeking_work? %>
+        </small>
+        </h1>
         <p><%= user.bio %></p>
         <% @showcase_user = user %>
         <%= render 'layouts/details' %>
     	</div>
-
     </div>
-    
   <% end %>
 </div>
