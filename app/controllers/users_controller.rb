@@ -35,7 +35,6 @@ class UsersController < ApplicationController
   end
 
   def set_available
-    # @user_to_be_available = User.find_by_github_username(params[:username])
     if current_user.seeking_work?
       current_user.set_as_unavailable
     else
