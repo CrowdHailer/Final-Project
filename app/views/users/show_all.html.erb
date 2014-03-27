@@ -12,7 +12,7 @@
       </div>
       <div class="medium-9 columns" >
     		<h1><%= link_to user.name, show_details_path(user.github_username) %><small> <%= content_tag(:i, nil, class: 'fi-torsos-all') + user.cohort %>
-          <%= content_tag(:span, 'Available', id: 'available_work', class: 'right') if user.seeking_work? %>
+          <%= content_tag(:span, 'Seeking Work', id: 'available_work', class: 'right') if user.seeking_work? %>
         </small>
         </h1>
         <p><%= user.bio %></p>
