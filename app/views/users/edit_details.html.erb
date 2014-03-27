@@ -11,7 +11,7 @@
         <%= @user.bio %>
       </div>
       <%= link_to 'Available For Work', set_available_path, :class => "button" unless @user.seeking_work? %>
-      <%= link_to 'Stop looking Im hired Work', set_available_path, :class => "button" if @user.seeking_work? %>
+      <%= link_to 'Not Available For Work', set_available_path, :class => "button" if @user.seeking_work? %>
     </div>
     <p> &nbsp; </p>
     <%= 'Updates saved' if @saved %>

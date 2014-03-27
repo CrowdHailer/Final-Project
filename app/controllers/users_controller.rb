@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     else
       current_user.set_as_available
     end
-    redirect_to '/edit', notice: 'WOrk status wordies'
+    redirect_to '/edit', notice: 'You have successfully updated your work availability status!'
   end
   private
 
