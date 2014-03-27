@@ -35,13 +35,12 @@ class UsersController < ApplicationController
   end
 
   def set_available
-    # @user_to_be_available = User.find_by_github_username(params[:username])
     if current_user.seeking_work?
       current_user.set_as_unavailable
     else
       current_user.set_as_available
     end
-    redirect_to '/edit', notice: 'WOrk status wordies'
+    redirect_to '/edit', notice: 'You have successfully updated your work availability status!'
   end
   private
 

@@ -3,7 +3,7 @@ Given(/^I sign in$/) do
 end
 
 When(/^I sign out$/) do
-  click_link "Sign out"
+  click_link "Sign Out"
 end
 
 Given(/^I am confirmed$/) do # repetition here "there is a confirmed maker" step def -- to refactor

@@ -7,11 +7,11 @@
         <%= image_tag @user.profile_image %>
       </div>
       <div class="medium-6 columns">
-        <p>BIO</p>
+        <p class="bio">Bio</p>
         <%= @user.bio %>
       </div>
       <%= link_to 'Available For Work', set_available_path, :class => "button" unless @user.seeking_work? %>
-      <%= link_to 'Stop looking Im hired Work', set_available_path, :class => "button" if @user.seeking_work? %>
+      <%= link_to 'Not Available For Work', set_available_path, :class => "button" if @user.seeking_work? %>
     </div>
     <p> &nbsp; </p>
     <%= 'Updates saved' if @saved %>

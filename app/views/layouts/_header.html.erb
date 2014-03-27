@@ -7,7 +7,7 @@
             <%= link_to 'My Profile', show_details_path(current_user.github_username), :class => "button" %>  
           </li>
           <li>
-            <%= link_to 'Sign out', signout_path, method: :delete, :class => "button github_button" %>
+            <%= link_to 'Sign Out', signout_path, method: :delete, :class => "button github_button" %>
           </li>
         <% else %>
           <li><a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= ENV['GITHUB_CLIENT_ID'] %>" class="button">Sign in with Github</a></li>

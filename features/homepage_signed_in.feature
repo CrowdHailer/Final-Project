@@ -4,7 +4,7 @@ Feature: Home page content when signed in
     Given I sign in
 
   Scenario: Github sign-in
-    Then I should see "Sign out"
+    Then I should see "Sign Out"
 
   Scenario: Log out
     When I sign out
