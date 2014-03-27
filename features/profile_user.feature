@@ -21,7 +21,7 @@ Feature: Show one person's details
       | @crowdhailer                      |
       | linkedin.ch.com                   |
       | January                           |
-      | I am seeking work                 |
+      | Seeking Work                      |
 
   Scenario: When the maker is not seeking work
     When I visit the user profile page
