@@ -52,6 +52,7 @@ h1 {
 
 footer {
 	background-color: #EBEFF3;
+  text-align: center;
 }
 
 .header {
@@ -74,9 +75,9 @@ footer {
 }
 
 .inline-list {
-	float: right;
 	margin-top: 1.0625rem;
 	margin-right: 1.1rem;
+  padding-left: 5em;
 }
 .available_button {
   float: right;
