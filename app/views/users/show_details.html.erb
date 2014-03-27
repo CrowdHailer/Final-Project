@@ -8,11 +8,9 @@
         <h1><%= @showcase_user.name %>
           <small>
             <%= content_tag(:i, nil, class: 'fi-torsos-all') + @showcase_user.cohort if @showcase_user.cohort %>
+          <%= content_tag(:span, 'Seeking Work', id: 'available_work', class: 'right') if @showcase_user.seeking_work? %>
           </small>
         </h1>
-        <% if @showcase_user.seeking_work? %>
-          <p>I am seeking work </p>
-        <% end %>
         <p><%= @showcase_user.bio %></p>
         <%= render 'layouts/details' %>
         <%= link_to 'Back To Users', users_path, :class => "button" %>
