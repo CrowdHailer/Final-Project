@@ -7,14 +7,13 @@ class UsersController < ApplicationController
 
   def show_details
   	@showcase_user = User.find_by_github_username(params['github_username'])
-    ap @showcase_user
     @user = current_user
     if @showcase_user
       gon.github_username = @showcase_user.github_username
       begin
-      gon.stackoverflow_id = @showcase_user.stackoverflow.match(/\d+/)[0]
-      rescue Exception => e
-        
+        gon.stackoverflow_id = @showcase_user.stackoverflow.match(/\d+/)[0]
+      rescue 
+        gon.stackoverflow_id = nil
       end
     end 
     redirect_to root_path, alert: 'User profile not found' unless @showcase_user
