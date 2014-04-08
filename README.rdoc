@@ -1,5 +1,7 @@
 == README
 
+{<img src="https://codeclimate.com/github/CrowdHailer/Final-Project.png" />}[https://codeclimate.com/github/CrowdHailer/Final-Project]
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
