@@ -5,7 +5,7 @@
 #### A webservice to showcase the graduates of [Makers Academy](http://www.makersacademy.com/)
 
 # Installation
-1. Clone this repo ```$ git clone blah```
+1. Clone this repo ```$ git clone git@github.com:CrowdHailer/Final-Project.git```
 2. Change into project directory ```$ cd Final-Project```
 3. Fetch dependancies with bundler ```$ bundle```
 4. Create databases (requires psql details in enviroment variables) ```rake db:create```
